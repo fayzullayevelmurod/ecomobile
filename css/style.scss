@@ -660,7 +660,6 @@ body {
     align-items: stretch;
     justify-content: space-between;
     gap: 2rem;
-    flex-wrap: wrap;
   }
 
   .left-box {
@@ -828,6 +827,10 @@ body {
 
   .intro .about-us {
     padding: 25px;
+  }
+
+  .footer .container {
+    flex-wrap: wrap;
   }
 }
 
