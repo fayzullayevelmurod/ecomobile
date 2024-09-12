@@ -82,7 +82,7 @@ body {
 .title {
   font-size: 90px;
   font-weight: 500;
-  line-height: 26px;
+  line-height: normal;
   text-align: center;
   color: #005DA5;
 }
@@ -988,11 +988,15 @@ body {
   }
 
   .any-doubts__img {
-    display: none;
+    max-width: 100%;
+    width: 45%;
+    order: 1;
+    margin: 0 auto;
   }
 
   .any-doubts .container {
-    padding: 25px;
+    padding: 25px 25px 0 25px;
+    flex-direction: column;
   }
 
   .intro .about-us {
@@ -1127,6 +1131,7 @@ body {
 
   .select-tariff .right-box .tariff-boxes {
     flex-wrap: wrap;
+    gap: 15px;
   }
 
   .all-tariffs .title,
@@ -1153,6 +1158,10 @@ body {
   .questions-answers .accordion-body__desc {
     font-size: 16px;
     line-height: 22px;
+  }
+
+  .any-doubts__img {
+    width: 100%;
   }
 }
 
