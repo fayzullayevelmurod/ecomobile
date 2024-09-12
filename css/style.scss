@@ -449,7 +449,6 @@ body {
       display: flex;
       gap: 30px;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .tariff-box__info {
@@ -953,6 +952,10 @@ body {
 
   .footer {
     padding: 50px 0;
+  }
+
+  .select-tariff .right-box .tariff-boxes {
+    flex-wrap: wrap;
   }
 }
 
