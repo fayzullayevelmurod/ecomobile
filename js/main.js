@@ -155,3 +155,53 @@ accordions.forEach(accordion => {
   })
 })
 
+
+// modals
+// Barcha modal va kartalarni topish
+const cards = document.querySelectorAll('.all-tariffs__card');
+const modals = document.querySelectorAll('.modal');
+const closeModalButtons = document.querySelectorAll('.close-modal');
+const selectButtons = document.querySelectorAll('.btn-primary[data-modal="thanks-modal"]');
+const modalTriggers = document.querySelectorAll('[data-modal="thanks-modal"]');
+
+modalTriggers.forEach(button => {
+  button.addEventListener('click', function () {
+    const currentModal = button.closest('.modal');
+    if (currentModal) {
+      closeModal(currentModal);
+    }
+
+    showModal('thanks-modal');
+  });
+});
+
+function showModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.classList.add('show');
+}
+
+function closeModal(modal) {
+  modal.classList.remove('show');
+}
+
+cards.forEach(card => {
+  card.addEventListener('click', function () {
+    const modalId = card.getAttribute('data-modal');
+    showModal(modalId);
+  });
+});
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', function () {
+    const modal = button.closest('.modal');
+    closeModal(modal);
+  });
+});
+
+modals.forEach(modal => {
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
