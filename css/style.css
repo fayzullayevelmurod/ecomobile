@@ -605,6 +605,8 @@ body {
   font-weight: 300;
   line-height: 18.38px;
   color: #161616;
+  width: -moz-fit-content;
+  width: fit-content;
   border-bottom: 1px solid #161616;
 }
 .footer .services-list {
