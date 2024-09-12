@@ -1,48 +1,48 @@
-  // intro-slider
-  try {
-    const introSlider = new Swiper('.intro-swiper', {
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false, 
-      },
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      slidesPerView: '1',
-      spaceBetween: 10,
-      speed: 700,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
+// intro-slider
+try {
+  const introSlider = new Swiper('.intro-swiper', {
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    slidesPerView: '1',
+    spaceBetween: 10,
+    speed: 700,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
+  });
+} catch (error) { }
+
+// tab content
+try {
+  const contents = document.querySelectorAll('.about-us__content'); // Barcha about-us__content bloklarini tanlash
+  let currentIndex = 0;
+
+  // Birinchi bo'limga 'show' klassini qo'shamiz
+  contents[currentIndex].classList.add('show');
+
+  const nextBtns = document.querySelectorAll('.next-btn');
+
+  nextBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      // Hozirgi bo'limdan 'show' klassini olib tashlaymiz
+      contents[currentIndex].classList.remove('show');
+
+      // Indeksni keyingi bo'limga o'tkazamiz
+      currentIndex = (currentIndex + 1) % contents.length;
+
+      // Yangi bo'limga 'show' klassini qo'shamiz
+      contents[currentIndex].classList.add('show');
     });
-  } catch (error) { }
-
-  // tab content
-  try {
-    const contents = document.querySelectorAll('.about-us__content'); // Barcha about-us__content bloklarini tanlash
-    let currentIndex = 0;
-
-    // Birinchi bo'limga 'show' klassini qo'shamiz
-    contents[currentIndex].classList.add('show');
-
-    const nextBtns = document.querySelectorAll('.next-btn');
-
-    nextBtns.forEach(btn => {
-      btn.addEventListener('click', function () {
-        // Hozirgi bo'limdan 'show' klassini olib tashlaymiz
-        contents[currentIndex].classList.remove('show');
-
-        // Indeksni keyingi bo'limga o'tkazamiz
-        currentIndex = (currentIndex + 1) % contents.length;
-
-        // Yangi bo'limga 'show' klassini qo'shamiz
-        contents[currentIndex].classList.add('show');
-      });
-    });
-  } catch (error) { }
+  });
+} catch (error) { }
 
 // // Tarif qiymatlarini saqlash uchun massivlar
 // const minutesOptions = [500, 1000, 1500, 2000];
@@ -141,3 +141,17 @@ IMask(
     mask: '+{7}(000)000-00-00'
   }
 )
+
+
+const accordions = document.querySelectorAll('.accordion');
+console.log(accordions);
+accordions.forEach(accordion => {
+  const accordionHeader = accordion.querySelector('.accordion-header');
+  const accordionBody = accordion.querySelector('.accordion-body');
+
+  accordionHeader.addEventListener('click', () => {
+    accordionBody.classList.toggle('show');
+    accordionHeader.classList.toggle('active')
+  })
+})
+
