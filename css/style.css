@@ -79,6 +79,14 @@ body {
   margin: 0 auto;
 }
 
+.title {
+  font-size: 90px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: center;
+  color: #005DA5;
+}
+
 .btn-primary,
 .btn-outline-primary {
   padding: 12px 26px;
@@ -550,6 +558,87 @@ body {
   color: #005DA5;
 }
 
+.all-tariffs {
+  margin-bottom: 70px;
+}
+.all-tariffs .title {
+  margin: 50px 0 70px 0;
+}
+.all-tariffs__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
+  gap: 24px;
+}
+.all-tariffs__card {
+  background: #E2E8EF;
+  padding: 20px 28px 17px 28px;
+  border-radius: 24px;
+  text-align: center;
+}
+.all-tariffs__card-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+.all-tariffs__card .tariff-boxes {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 24px 0 18px 0;
+}
+.all-tariffs__card .tariff-box {
+  width: 68px;
+  height: 68px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px dashed #005DA5;
+  background: #fff;
+  text-align: center;
+}
+.all-tariffs__card .tariff-box__count {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  display: block;
+}
+.all-tariffs__card .tariff-box__status {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  display: block;
+  margin-top: -5px;
+}
+.all-tariffs__card .bonus-box {
+  border-radius: 24px;
+  padding: 16px 20px;
+  border: 2px solid #005DA6;
+  text-align: left;
+  background: #fff;
+}
+.all-tariffs__card .bonus-box__count {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  display: block;
+}
+.all-tariffs__card .bonus-box__info {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 26px;
+  display: block;
+}
+.all-tariffs__card-price {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 41.36px;
+  margin: 23px 0;
+  display: block;
+  color: #005DA5;
+}
+
 .footer {
   padding: 80px 0;
   background: #EAECEE;
@@ -662,6 +751,10 @@ body {
   }
 }
 @media screen and (max-width: 992px) {
+  .title {
+    font-size: 40px;
+    line-height: 46px;
+  }
   .header .nav {
     display: none;
   }
@@ -800,6 +893,9 @@ body {
   }
   .select-tariff .right-box .tariff-boxes {
     flex-wrap: wrap;
+  }
+  .all-tariffs .title {
+    margin: 50px 0;
   }
 }
 @media screen and (max-width: 500px) {
