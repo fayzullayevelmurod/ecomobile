@@ -157,7 +157,6 @@ accordions.forEach(accordion => {
 
 
 // modals
-// Barcha modal va kartalarni topish
 const cards = document.querySelectorAll('.all-tariffs__card');
 const modals = document.querySelectorAll('.modal');
 const closeModalButtons = document.querySelectorAll('.close-modal');
@@ -170,7 +169,6 @@ modalTriggers.forEach(button => {
     if (currentModal) {
       closeModal(currentModal);
     }
-
     showModal('thanks-modal');
   });
 });
@@ -178,10 +176,12 @@ modalTriggers.forEach(button => {
 function showModal(modalId) {
   const modal = document.getElementById(modalId);
   modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal(modal) {
   modal.classList.remove('show');
+  document.body.style.overflow = '';
 }
 
 cards.forEach(card => {
@@ -205,3 +205,13 @@ modals.forEach(modal => {
     }
   });
 });
+
+// media header
+const hambuergerMenuBtn = document.querySelector('.hamburger-menu');
+const nav = document.querySelector('.header .nav');
+
+hambuergerMenuBtn.addEventListener('click', () => {
+  hambuergerMenuBtn.classList.toggle('active');
+  nav.classList.toggle('show');
+  document.body.classList.toggle('no-scroll')
+})

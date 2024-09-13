@@ -68,6 +68,10 @@ input[type="search"]::-webkit-search-results-decoration {
 body {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
@@ -158,6 +162,10 @@ body {
   }
 
   .nav {
+    .header-contact__tel {
+      display: none;
+    }
+
     &-link {
       font-size: 20px;
       font-weight: 300;
@@ -467,7 +475,7 @@ body {
     }
 
 
-    .tariff-box {
+    .tariff-boxx {
       display: flex;
       align-items: center;
       gap: 16px;
@@ -483,10 +491,10 @@ body {
         justify-content: center;
         text-align: center;
         flex-direction: column;
+      }
 
-        &.solid-border {
-          border-style: solid;
-        }
+      .solid-border {
+        border-style: solid;
       }
 
       .prev-btn-tariff,
@@ -1192,6 +1200,41 @@ body {
   }
 }
 
+.hamburger-menu {
+  display: none;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    width: 20px;
+    height: 2px;
+    background: #005DA5;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    position: relative;
+  }
+
+  &.active {
+    span:nth-child(2) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    span:first-child {
+      transform: rotate(45deg);
+      top: 7px;
+    }
+
+    span:last-child {
+      transform: rotate(-45deg);
+      top: -7px;
+    }
+  }
+}
 
 @media screen and (max-width: 992px) {
   .title {
@@ -1199,9 +1242,40 @@ body {
     line-height: 46px;
   }
 
+  .hamburger-menu {
+    display: flex;
+  }
+
   .header {
     .nav {
-      display: none;
+      position: fixed;
+      width: 100%;
+      background: #fff;
+      padding: 20px;
+      top: 97px;
+      right: -100%;
+      transition: all .3s ease-out;
+      height: 100%;
+      z-index: 100;
+
+      &.show {
+        right: 0;
+      }
+
+      .header-contact__tel {
+        display: block;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: end;
+      }
+    }
+
+    &-contact {
+      &__tel.media-none {
+        display: none;
+      }
     }
   }
 
@@ -1258,8 +1332,12 @@ body {
 
 
 @media screen and (max-width: 768px) {
-  .intro-slider__img {
-    display: none;
+  .intro-slider .swiper-slide {
+    flex-direction: column;
+  }
+
+  .header .nav {
+    top: 83px;
   }
 
   .intro-slider {
