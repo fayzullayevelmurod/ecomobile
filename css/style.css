@@ -315,6 +315,9 @@ body.no-scroll {
   line-height: 26px;
   display: block;
   margin: 10px auto 50px auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 1px solid #000;
 }
 .select-tariff .left-box__top {
   display: flex;
@@ -761,6 +764,7 @@ body.no-scroll {
   align-items: center;
   justify-content: center;
   display: none;
+  z-index: 100;
 }
 .modal.show {
   display: flex;

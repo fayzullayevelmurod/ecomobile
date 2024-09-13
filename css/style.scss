@@ -363,6 +363,8 @@ body {
       line-height: 26px;
       display: block;
       margin: 10px auto 50px auto;
+      width: fit-content;
+      border-bottom: 1px solid #000;
     }
   }
 
@@ -906,6 +908,7 @@ body {
   align-items: center;
   justify-content: center;
   display: none;
+  z-index: 100;
 
   &.show {
     display: flex;
