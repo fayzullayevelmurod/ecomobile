@@ -214,7 +214,7 @@
                         <img src="images/icons/prev-arrow.svg" alt="prev-arrow">
                       </button>
                       <div class="tariff">
-                        <span class="tariff-count sms-cound">100</span>
+                        <span class="tariff-count sms-count">100</span>
                         <span class="tariff-status">смс</span>
                       </div>
                       <button class="next-btn-tariff">
@@ -389,44 +389,235 @@
       <!-- footer -->
     </div>
 
-    <!-- modal -->
-    <!-- modal -->
 
-    <!-- modal -->
-    <div class="modal" id="tariffModal">
+    <!-- Modal -->
+    <div class="info-modal modal modall">
       <div class="scroll-box">
         <div class="modal-content">
-          <button class="close-btn">
+          <button class="close-modal">
             <img src="images/icons/clos-icon.svg" alt="close icon">
           </button>
-          <h2 class="modal-title"></h2>
+          <h3 class="modal-title tariff-title">Всегда.Связь МТС-1</h3>
           <div class="tariffs">
             <div class="tariff-boxes">
-              <div class="tariff-box minut-count"><span class="tariff-box__count"></span> минут</div>
-              <div class="tariff-box sms-count"><span class="tariff-box__count-sms"></span> смс</div>
-              <div class="tariff-box gb-count"><span class="tariff-box__count"></span> ГБ</div>
+              <div class="tariff-box">
+                <span class="tariff-box__count modal-minutes-count"></span>
+                <span class="tariff-box__status">минут</span>
+              </div>
+              <div class="tariff-box">
+                <span class="tariff-box__count modal-sms-count"></span>
+                <span class="tariff-box__status">смс</span>
+              </div>
+              <div class="tariff-box">
+                <span class="tariff-box__count modal-gb-count"></span>
+                <span class="tariff-box__status">гб</span>
+              </div>
+            </div>
+            <div class="bonus-box">
+              <span class="bonus-box__count modal-bonus-gb">+ 10 гб</span>
+              <span class="bonus-box__info">на 2й sim-карте Мегафон</span>
             </div>
           </div>
           <div class="sidebars">
             <div class="left-box">
-              <div class="sidebars-content list-title-1">
-                <h4 class="sidebars-title"></h4>
-                <p class="sidebars-info"></p>
+              <div class="sidebars-content">
+                <h4 class="sidebars-title">Преобразите свой опыт связи с нашим новым тарифом!</h4>
+                <p class="sidebars-info">
+                  Мы рады представить вам уникальный агрегированный продукт, который объединяет все ваши потребности в
+                  связи
+                  и интернете в одном удобном решении. С двумя SIM-картами вы получите максимальную гибкость и
+                  эффективность, чтобы наслаждаться бесперебойной связью и быстрым интернетом.
+                </p>
               </div>
-              <div class="sidebars-content list-title-2">
-                <h4 class="sidebars-title"></h4>
-                <ul class="features-list"></ul>
+              <div class="sidebars-content">
+                <h4 class="sidebars-title">Преимущества нашего тарифа:</h4>
+                <ul>
+                  <li>
+                    <a href="#!">Все в одном:</a>
+                    <span>Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета.
+                      Больше не нужно выбирать между минутами и трафиком — у вас будет всё, что вам нужно.</span>
+                  </li>
+                  <li>
+                    <a href="#!">Максимум возможностей:</a>
+                    <span>С 1000 минутами и 500 SMS у вас будет достаточно средств для общения, а дополнительные 15
+                      ГБ интернета обеспечат вам надежное подключение для всех онлайн-активностей.</span>
+                  </li>
+                  <li>
+                    <a href="#!">Гибкость и комфорт:</a>
+                    <span>Подключите обе SIM-карты к одному тарифу и наслаждайтесь идеальным сочетанием связи
+                      и интернета, где бы вы ни находились.</span>
+                  </li>
+                </ul>
               </div>
-              <div class="sidebars-content list-title-3">
-                <h4 class="sidebars-title"></h4>
-                <ul class="features-list"></ul>
+              <div class="sidebars-content">
+                <h4 class="sidebars-title">Что включает наш тариф?</h4>
+                <ul>
+                  <li>
+                    <a href="#!">Первая SIM-карта:</a>
+                    1000 минут для звонков, 500 SMS и 30 ГБ интернета. Идеально для тех, кто активно общается и часто
+                    пользуется интернетом.
+                  </li>
+                  <li>
+                    <a href="#!">Вторая SIM-карта:</a>
+                    Дополнительные 15 ГБ интернета. Отличное решение для любителей стриминга, социальных сетей и
+                    загрузок.
+                  </li>
+                </ul>
+              </div>
+              <div class="sidebars-content">
+                <h4 class="sidebars-title">Что включает наш тариф?</h4>
+                <ul>
+                  <li>
+                    <a href="#!">Экономия и удобство:</a>
+                    Получите все необходимые услуги по выгодной цене и не тратьте время на поиск дополнительных пакетов.
+                  </li>
+                  <li>
+                    <a href="#!">Надежность и стабильность:</a>
+                    Две SIM-карты обеспечивают стабильное покрытие и высокий интернет-скорость, что делает этот тариф
+                    идеальным для активного использования.
+                  </li>
+                  <li>
+                    <a href="#!">Легкость в управлении:</a>
+                    Вы легко можете управлять своей связью и интернетом через одно приложение и один тариф, что делает
+                    использование простым и удобным.
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="right-box">
-              <span class="tariff-price"></span>
-              <button class="btn-primary" data-modal="thanks-modal">ВЫБРАТЬ</button>
+              <div class="checkbox-content">
+                <div class="checkbox-box">
+                  <input class="checkbox-input" type="checkbox" checked="" id="checkbox-4">
+                  <label class="checkbox" for="checkbox-4"></label>
+                  <span class="checkbox-label">Перейти со своим номером</span>
+                </div>
+                <div class="checkbox-box">
+                  <input class="checkbox-input" type="checkbox" checked="" id="checkbox-5">
+                  <label class="checkbox" for="checkbox-5"></label>
+                  <span class="checkbox-label">Основная sim-карта: e-SIM</span>
+                </div>
+                <div class="checkbox-box">
+                  <input class="checkbox-input" type="checkbox" checked="" id="checkbox-6">
+                  <label class="checkbox" for="checkbox-6"></label>
+                  <span class="checkbox-label">Дополнительная sim-карта: e-SIM</span>
+                </div>
+              </div>
+              <span class="tariff-price modal-tariff-price">700 р/мес</span>
+              <button class="btn-primary select-modal__open" data-modal="select-modal">ВЫБРАТЬ</button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal modall select-modal">
+      <div class="scroll-box">
+        <div class="modal-content">
+          <button class="close-modal">
+            <img src="images/icons/clos-icon.svg" alt="close icon">
+          </button>
+          <h3 class="modal-title tariff-title">Всегда.Связь МТС-1</h3>
+          <div class="tariffs">
+            <div class="tariff-boxes">
+              <div class="tariff-box">
+                <span class="tariff-box__count modal-minutes-count"></span>
+                <span class="tariff-box__status">минут</span>
+              </div>
+              <div class="tariff-box">
+                <span class="tariff-box__count modal-sms-count"></span>
+                <span class="tariff-box__status">смс</span>
+              </div>
+              <div class="tariff-box">
+                <span class="tariff-box__count modal-gb-count"></span>
+                <span class="tariff-box__status">гб</span>
+              </div>
+            </div>
+            <div class="flex-box">
+              <div class="bonus-box">
+                <span class="bonus-box__count modal-bonus-gb">+ 10 гб</span>
+                <span class="bonus-box__info">на 2й sim-карте Мегафон</span>
+              </div>
+              <div class="text-box">
+                <div>
+                  <h5>Основная СИМ-карта:</h5>
+                  <span>физическая, перейти со своим номером</span>
+                </div>
+                <div>
+                  <h5>Дополнительная СИМ-карта:</h5>
+                  <span>физическая, получу доставкой</span>
+                </div>
+              </div>
+            </div>
+            <h4 class="tariff-price modal-tariff-price">500 р/мес</h4>
+          </div>
+          <div class="forms">
+            <div class="form">
+              <span class="form-label">Данные покупателя</span>
+              <div class="input-box">
+                <input type="text" placeholder="ФИО*">
+                <input type="tel" placeholder="Телефон*">
+                <input type="email" placeholder="E-mail">
+              </div>
+            </div>
+            <div class="form">
+              <span class="form-label">Информация о доставке</span>
+              <div class="inputs">
+                <div class="search-input">
+                  <input type="search" placeholder="Город*">
+                  <img class="search-icon" src="images/icons/search.svg" alt="search icon">
+                </div>
+                <input class="punkt" type="text" placeholder="Пункт получения">
+              </div>
+              <div class="delivery-box">
+                <span class="delivery-text">Способ доставки</span>
+                <div class="checkboxes">
+                  <input type="radio" checked id="check-1" name="radio-one">
+                  <label for="check-1">
+                    <span>Способ доставки</span>
+                  </label>
+                  <input type="radio" id="check-2" name="radio-one">
+                  <label for="check-2">
+                    <span>Почта Росии</span>
+                  </label>
+                  <input type="radio" id="check-3" name="radio-one">
+                  <label for="check-3">
+                    <span>Самовывоз</span>
+                  </label>
+                </div>
+              </div>
+              <div class="map">
+                <iframe
+                  src="https://yandex.uz/map-widget/v1/?ll=2.865680%2C12.846736&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTQ0MTU4NjQwEgxOaWdlciwgUm9zc2kiCg1ZZzdAFTyMTUE%2C&z=13.18"
+                  width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+              </div>
+              <span class="map-text">Стоимость доставки:
+                Бесплатно</span>
+            </div>
+          </div>
+          <div class="checkboxes map-checkbox">
+            <input type="radio" checked id="check-1" name="radio-two">
+            <label for="check-21">
+              <span>Согласен с Политикой конфиденциальности</span>
+            </label>
+          </div>
+          <div class="modal-bottom">
+            <button class="btn-outline-primary close-modal-2">Вернуться к подбору тарифа</button>
+            <button class="btn-primary" data-modal="thanks-modal">ОТПРАВИТЬ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- thansk modal -->
+    <div class="modal thanks-modal" id="thanks-modal">
+      <div class="scroll-box">
+        <div class="modal-content">
+          <button class="close-modal">
+            <img src="images/icons/clos-icon.svg" alt="close-icon">
+          </button>
+          <h3 class="modal-title">Спасибо!</h3>
+          <p class="modal-info">В ближайшее время с вами свяжется наш менеджер</p>
+          <button class="close-modal btn-primary">ЗАКРЫТЬ</button>
         </div>
       </div>
     </div>

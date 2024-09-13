@@ -1,3 +1,4 @@
+"use strict";
 // media header
 const hambuergerMenuBtn = document.querySelector('.hamburger-menu');
 const nav = document.querySelector('.header .nav');
@@ -54,97 +55,6 @@ try {
   });
 } catch (error) { }
 
-// // Tarif qiymatlarini saqlash uchun massivlar
-// const minutesOptions = [500, 1000, 1500, 2000];
-// const smsOptions = [100, 150, 200, 250];
-// const gbOptions = [20, 30, 40, 50];
-
-// // Har bir tarifning boshlang'ich qiymatlari
-// let currentMinuteIndex = 0;
-// let currentSmsIndex = 0;
-// let currentGbIndex = 0;
-
-// // Elementlarni topish
-// const prevMinuteBtn = document.querySelectorAll('.prev-btn-tariff')[0];
-// const nextMinuteBtn = document.querySelectorAll('.next-btn-tariff')[0];
-// const minuteCount = document.querySelectorAll('.tariff-count')[0];
-
-// const prevSmsBtn = document.querySelectorAll('.prev-btn-tariff')[1];
-// const nextSmsBtn = document.querySelectorAll('.next-btn-tariff')[1];
-// const smsCount = document.querySelectorAll('.tariff-count')[1];
-
-// const prevGbBtn = document.querySelectorAll('.prev-btn-tariff')[2];
-// const nextGbBtn = document.querySelectorAll('.next-btn-tariff')[2];
-// const gbCount = document.querySelectorAll('.tariff-count')[2];
-
-// const priceInfo = document.querySelector('.select-tariff__bottom-info');
-
-// // Tarif qiymatlarini yangilash funksiyasi
-// function updateTariff() {
-//   minuteCount.textContent = minutesOptions[currentMinuteIndex];
-//   smsCount.textContent = smsOptions[currentSmsIndex];
-//   gbCount.textContent = gbOptions[currentGbIndex];
-
-//   // Narxni hisoblash (misol uchun)
-//   const totalPrice = 500 + currentMinuteIndex * 100 + currentSmsIndex * 50 + currentGbIndex * 200;
-//   priceInfo.textContent = `Абонентская плата по тарифу составляет ${totalPrice} рублей в месяц`;
-
-//   // Prev tugmalarini ko'rsatish yoki yashirish
-//   prevMinuteBtn.classList.toggle('hidden', currentMinuteIndex === 0);
-//   prevSmsBtn.classList.toggle('hidden', currentSmsIndex === 0);
-//   prevGbBtn.classList.toggle('hidden', currentGbIndex === 0);
-// }
-
-// // Minute uchun tugmalar
-// nextMinuteBtn.addEventListener('click', function () {
-//   if (currentMinuteIndex < minutesOptions.length - 1) {
-//     currentMinuteIndex++;
-//     updateTariff();
-
-//   }
-//   console.log('asa');
-// });
-
-// prevMinuteBtn.addEventListener('click', function () {
-//   if (currentMinuteIndex > 0) {
-//     currentMinuteIndex--;
-//     updateTariff();
-//   }
-// });
-
-// // SMS uchun tugmalar
-// nextSmsBtn.addEventListener('click', function () {
-//   if (currentSmsIndex < smsOptions.length - 1) {
-//     currentSmsIndex++;
-//     updateTariff();
-//   }
-// });
-
-// prevSmsBtn.addEventListener('click', function () {
-//   if (currentSmsIndex > 0) {
-//     currentSmsIndex--;
-//     updateTariff();
-//   }
-// });
-
-// // GB uchun tugmalar
-// nextGbBtn.addEventListener('click', function () {
-//   if (currentGbIndex < gbOptions.length - 1) {
-//     currentGbIndex++;
-//     updateTariff();
-//   }
-// });
-
-// prevGbBtn.addEventListener('click', function () {
-//   if (currentGbIndex > 0) {
-//     currentGbIndex--;
-//     updateTariff();
-//   }
-// });
-
-// // Dastlabki holat
-// updateTariff();
-
 IMask(
   document.getElementById('phone-mask'),
   {
@@ -153,17 +63,244 @@ IMask(
 )
 
 
-const accordions = document.querySelectorAll('.accordion');
-console.log(accordions);
-accordions.forEach(accordion => {
-  const accordionHeader = accordion.querySelector('.accordion-header');
-  const accordionBody = accordion.querySelector('.accordion-body');
+try {
+  const accordions = document.querySelectorAll('.accordion');
+  console.log(accordions);
+  accordions.forEach(accordion => {
+    const accordionHeader = accordion.querySelector('.accordion-header');
+    const accordionBody = accordion.querySelector('.accordion-body');
 
-  accordionHeader.addEventListener('click', () => {
-    accordionBody.classList.toggle('show');
-    accordionHeader.classList.toggle('active')
+    accordionHeader.addEventListener('click', () => {
+      accordionBody.classList.toggle('show');
+      accordionHeader.classList.toggle('active')
+    })
   })
-})
+} catch (error) { }
+
+
+
+
+// tarif ============================================================================================================================================================
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Elementlarni tanlab olish
+  const functionsInfo = document.querySelector('.functions-info');
+  const megafonBtn = document.querySelector('.megafon-btn');
+  const megafonBtn2 = document.querySelector('.megafon-btn-2');
+  const mtcBtn = document.querySelector('.mtc-btn');
+  const mtcBtn2 = document.querySelector('.mtc-btn-2');
+  const minutCount = document.querySelector('.minut-count');
+  const smsCount = document.querySelector('.sms-count');
+  const gbCount = document.querySelector('.gb-count');
+  const bonusCount = document.querySelector('.bonus-count');
+  const tariffPrice = document.querySelector('.tariff-price');
+  const nextBtn = document.querySelectorAll('.next-btn-tariff');
+  const prevBtn = document.querySelectorAll('.prev-btn-tariff');
+  const moreDetailsBtns = document.querySelectorAll('.more-details__tariff');
+  const selectedTarifBtn = document.querySelector('.select-tariff__btn');
+  const selectTariffBottom = document.querySelector('.select-tariff__bottom-info');
+
+  function toggleActiveClass(activeBtn, inactiveBtn1, inactiveBtn2, linkedBtn, infoText) {
+    activeBtn.classList.add('active');
+    inactiveBtn1.classList.remove('active');
+    inactiveBtn2.classList.remove('active');
+    linkedBtn.classList.add('active');
+  }
+
+  // Modal elementlari
+  const modals = document.querySelectorAll('.modall');
+  const closeModalBtn = document.querySelector('.close-modal');
+  const closeModalBtn2 = document.querySelector('.close-modal-2');
+
+  // Info matnlarini belgilash
+  const infoTexts = {
+    megafon: ["Все нужные функции", "Все нужные функции", "Лучший выбор", "На полную катушку"],
+    mtc: ["Безупречный выбор", "Максимум возможностей", "Максимум комфорта", "Безграничные возможности"],
+  };
+
+  // Tariflar uchun qiymatlar
+  const megafonTariffs = [
+    { minut: 500, sms: 100, gb: 20, bonus: 10, price: '500 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-1 составляет 500 рублей в месяц' },
+    { minut: 1000, sms: 500, gb: 30, bonus: 15, price: '700 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-2 составляет 700 рублей в месяц' },
+    { minut: 2000, sms: 1000, gb: 50, bonus: 25, price: '900 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-3 составляет 900 рублей в месяц' },
+    { minut: 3500, sms: 1000, gb: 50, bonus: 25, price: '1300 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-4 составляет 1300 рублей в месяц' }
+  ];
+
+  const mtcTariffs = [
+    { minut: 700, sms: 300, gb: 50, bonus: 25, price: '650 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-1 составляет 650 рублей в месяц' },
+    { minut: 1000, sms: 300, gb: 60, bonus: 30, price: '800 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-2 составляет 800 рублей в месяц' },
+    { minut: 1500, sms: 500, gb: 80, bonus: 40, price: '1000 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-3 составляет 1000 рублей в месяц' },
+    { minut: 2000, sms: 1000, gb: 80, bonus: 40, price: '1150 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-4 составляет 1150 рублей в месяц' }
+  ];
+
+  // Bosqich holatini saqlash
+  let currentIndex = 0;
+  let currentTariffs = megafonTariffs;  // Dastlab megafon-btn aktiv
+  let currentInfoTextIndex = 0; // Info matn indexi
+
+  // Tarif qiymatlarini yangilash
+  function updateTariffValues(tariff) {
+    minutCount.textContent = tariff.minut;
+    smsCount.textContent = tariff.sms;
+    gbCount.textContent = tariff.gb;
+    bonusCount.textContent = tariff.bonus;
+    tariffPrice.textContent = tariff.price;
+    selectTariffBottom.textContent = tariff.bottomPrice
+  }
+  const selectOpenModalBtn = document.querySelector('.select-modal__open');
+  const selectModal = document.querySelector('.select-modal');
+  const infoModal = document.querySelector('.info-modal')
+  // Modalni ochish funksiyasi
+  function openModal(tariff) {
+    modals.forEach(modal => {
+      const modalTitle = modal.querySelector('.modal-title');
+      const modalMinutesCount = modal.querySelector('.modal-minutes-count');
+      const modalSmsCount = modal.querySelector('.modal-sms-count');
+      const modalGbCount = modal.querySelector('.modal-gb-count');
+      const modalBonusGb = modal.querySelector('.modal-bonus-gb');
+      const modalTariffPrice = modal.querySelector('.modal-tariff-price');
+      const modalSidebarsContent = modal.querySelector('.sidebars-content');
+
+
+      modalTitle.textContent = `Всегда.Связь ${currentTariffs === megafonTariffs ? 'Мегафон' : 'МТС'}-${currentIndex + 1}`;
+      modalMinutesCount.textContent = `${tariff.minut}`;
+      modalSmsCount.textContent = `${tariff.sms}`;
+      modalGbCount.textContent = `${tariff.gb}`;
+      modalBonusGb.textContent = `+ ${tariff.bonus} гб`;
+      modalTariffPrice.textContent = tariff.price;
+
+      // Sidebars kontentlari
+      const sidebarsContentData = {
+        megafon: [
+          {
+            title: "Преобразите свой опыт связи с нашим новым тарифом!",
+            info: "Мы рады представить вам уникальный агрегированный продукт, который объединяет все ваши потребности в связи и интернете в одном удобном решении."
+          },
+          {
+            title: "Преимущества нашего тарифа:",
+            info: `<ul><li><a href="#!">Все в одном:</a> Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета.</li></ul>`
+          },
+        ],
+        mtc: [
+          {
+            title: "Откройте новый уровень связи с нашим тарифом!",
+            info: "Наш новый тариф — это объединение всех ваших потребностей в одном решении."
+          },
+          {
+            title: "Преимущества тарифа МТС:",
+            info: `<ul><li><a href="#!">Лучшее предложение:</a> Первая SIM-карта для звонков и SMS, вторая для интернета.</li></ul>`
+          },
+        ]
+      };
+
+      const sidebarContentArray = currentTariffs === megafonTariffs ? sidebarsContentData.megafon : sidebarsContentData.mtc;
+      let sidebarHTML = '';
+
+      sidebarContentArray.forEach(item => {
+        sidebarHTML += `
+          <div class="sidebars-content">
+            <h4 class="sidebars-title">${item.title}</h4>
+            <p class="sidebars-info">${item.info}</p>
+          </div>
+        `;
+      });
+
+      if (modalSidebarsContent) {
+        modalSidebarsContent.innerHTML = sidebarHTML;  // Modalning sidebars qismini yangilash
+      }
+
+      // modal.style.display = 'flex';  // Modalni ko'rsatish
+    });
+  }
+
+  // Modalni yopish funksiyasi
+  function closeModal() {
+    modals.forEach(item => {
+      item.classList.remove('show')
+    });
+  }
+
+  // Tarifni o'zgartirish funksiyasi
+  function changeTariff(direction) {
+    currentIndex += direction;
+    currentIndex = Math.max(0, Math.min(currentIndex, currentTariffs.length - 1)); // Chegaralar
+    updateTariffValues(currentTariffs[currentIndex]);
+    currentInfoTextIndex = Math.min(currentIndex, infoTexts[currentTariffs === megafonTariffs ? 'megafon' : 'mtc'].length - 1);
+    functionsInfo.textContent = infoTexts[currentTariffs === megafonTariffs ? 'megafon' : 'mtc'][currentInfoTextIndex];
+    updateButtonVisibility();
+
+    if (modals[0].style.display === 'flex') {
+      openModal(currentTariffs[currentIndex]);  // Modal oynasini hozirgi tarif bilan yangilash
+    }
+  }
+
+  // Tugmalarni boshqarish
+  megafonBtn.addEventListener('click', () => {
+    currentTariffs = megafonTariffs;
+    currentIndex = 0;  // Dastlabki bosqich
+    updateTariffValues(currentTariffs[currentIndex]);
+    currentInfoTextIndex = 0;
+    functionsInfo.textContent = infoTexts.megafon[currentInfoTextIndex];
+    updateButtonVisibility();
+    toggleActiveClass(megafonBtn, mtcBtn, megafonBtn2, mtcBtn2);
+  });
+
+  mtcBtn.addEventListener('click', () => {
+    currentTariffs = mtcTariffs;
+    currentIndex = 0;  // Dastlabki bosqich
+    updateTariffValues(currentTariffs[currentIndex]);
+    currentInfoTextIndex = 0;
+    functionsInfo.textContent = infoTexts.mtc[currentInfoTextIndex];
+    updateButtonVisibility();
+    toggleActiveClass(mtcBtn, megafonBtn, mtcBtn2, megafonBtn2);
+  });
+  megafonBtn2.addEventListener('click', () => {
+    toggleActiveClass(megafonBtn2, megafonBtn, mtcBtn2, mtcBtn);
+  })
+  mtcBtn2.addEventListener('click', () => {
+    toggleActiveClass(mtcBtn2, mtcBtn, megafonBtn2, megafonBtn);
+  })
+  // "Подробнее" tugmalarini hodisaga bog'lash
+  moreDetailsBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      openModal(currentTariffs[currentIndex], 'info-modal');  // Hozirgi tarif ma'lumotlarini modalga yuborish
+      infoModal.classList.add('show')
+    });
+  });
+
+
+  selectOpenModalBtn.addEventListener('click', () => {
+    infoModal.classList.remove('show');
+    selectModal.classList.add('show');
+  })
+
+  selectedTarifBtn.addEventListener('click', () => {
+    openModal(currentTariffs[currentIndex]);
+    infoModal.classList.remove('show');
+    selectModal.classList.add('show');
+  })
+
+  // Next va Prev tugmalariga hodisa biriktirish
+  nextBtn.forEach(btn => btn.addEventListener('click', () => changeTariff(1)));
+  prevBtn.forEach(btn => btn.addEventListener('click', () => changeTariff(-1)));
+
+  // Modalni yopish hodisasi
+  closeModalBtn.addEventListener('click', closeModal);
+  closeModalBtn2.addEventListener('click', closeModal);
+
+  // Tugmalar holatini yangilash
+  function updateButtonVisibility() {
+    prevBtn.forEach(btn => btn.classList.toggle('hidden', currentIndex === 0));  // Birinchi bosqichda prev yashirin
+    nextBtn.forEach(btn => btn.classList.toggle('hidden', currentIndex === currentTariffs.length - 1));  // Oxirgi bosqichda next yashirin
+  }
+
+  // Boshlang'ich holatni yangilash
+  updateTariffValues(currentTariffs[currentIndex]);
+  updateButtonVisibility();
+  functionsInfo.textContent = infoTexts.megafon[currentInfoTextIndex];
+});
+
 
 
 // modals
@@ -173,6 +310,7 @@ try {
   const closeModalButtons = document.querySelectorAll('.close-modal');
   const selectButtons = document.querySelectorAll('.btn-primary[data-modal="thanks-modal"]');
   const modalTriggers = document.querySelectorAll('[data-modal="thanks-modal"]');
+
 
   modalTriggers.forEach(button => {
     button.addEventListener('click', function () {
@@ -216,233 +354,4 @@ try {
       }
     });
   });
-} catch (error) {
-
-}
-
-
-
-// Tarif elementlarini tanlab olish
-const functionsInfo = document.querySelector('.functions-info');
-
-const megafonBtn = document.querySelector('.megafon-btn');
-const mtcBtn = document.querySelector('.mtc-btn');
-const megafonBtn2 = document.querySelector('.megafon-btn-2');
-const mtcBtn2 = document.querySelector('.mtc-btn-2');
-
-const minutCount = document.querySelector('.minut-count');
-const smsCount = document.querySelector('.sms-count');
-const gbCount = document.querySelector('.gb-count');
-const bonusCount = document.querySelector('.bonus-count');
-const tariffPrice = document.querySelector('.tariff-price');
-const nextBtn = document.querySelectorAll('.next-btn-tariff');
-const prevBtn = document.querySelectorAll('.prev-btn-tariff');
-
-// Info matnlarini belgilash
-const infoTexts = {
-  megafon: ["Все нужные функции", "Все нужные функции", "Лучший выбор", "На полную катушку"],
-  mtc: ["Безупречный выбор", "Максимум возможностей", "Максимум комфорта", "Безграничные возможности"],
-};
-
-// Tugmalarni o'zaro `active` klassini boshqarish va info matnini yangilash funksiyasi
-function toggleActiveClass(activeBtn, inactiveBtn1, inactiveBtn2, linkedBtn, infoText) {
-  activeBtn.classList.add('active');
-  inactiveBtn1.classList.remove('active');
-  inactiveBtn2.classList.remove('active');
-  linkedBtn.classList.add('active');
-  functionsInfo.textContent = infoText;
-}
-
-// Tariflar uchun qiymatlar
-const megafonTariffs = [
-  { minut: 500, sms: 100, gb: 20, bonus: 10, price: 'Абонентская плата по тарифу Всегда.Связь Мтс-1 составляет 500 рублей в месяц' },
-  { minut: 1000, sms: 500, gb: 30, bonus: 15, price: 'Абонентская плата по тарифу Всегда.Связь Мтс-2 составляет 700 рублей в месяц' },
-  { minut: 2000, sms: 1000, gb: 50, bonus: 25, price: 'Абонентская плата по тарифу Всегда.Связь Мтс-3 составляет 900 рублей в месяц' },
-  { minut: 3500, sms: 1000, gb: 50, bonus: 25, price: 'Абонентская плата по тарифу Всегда.Связь Мтс-4 составляет 1300 рублей в месяц' }
-];
-
-const mtcTariffs = [
-  { minut: 700, sms: 300, gb: 50, bonus: 25, price: 'Абонентская плата по тарифу Всегда.Связь Мегафон-1 составляет 650 рублей в месяц' },
-  { minut: 1000, sms: 300, gb: 60, bonus: 30, price: 'Абонентская плата по тарифу Всегда.Связь Мегафон-2 составляет 800 рублей в месяц' },
-  { minut: 1500, sms: 500, gb: 80, bonus: 40, price: 'Абонентская плата по тарифу Всегда.Связь Мегафон-3 составляет 1000 рублей в месяц' },
-  { minut: 2000, sms: 1000, gb: 80, bonus: 40, price: 'Абонентская плата по тарифу Всегда.Связь Мегафон-4 составляет 1150 рублей в месяц' }
-];
-
-// Bosqich holatini saqlash
-let currentIndex = 0;
-let currentTariffs = megafonTariffs;  // Dastlab megafon-btn aktiv
-let currentInfoTextIndex = 0; // Info matn indexi
-
-// Tarif qiymatlarini yangilash
-function updateTariffValues(tariff) {
-  minutCount.textContent = tariff.minut;
-  smsCount.textContent = tariff.sms;
-  gbCount.textContent = tariff.gb;
-  bonusCount.textContent = tariff.bonus;
-  tariffPrice.textContent = tariff.price;
-}
-
-// Tugmalar holatini yangilash
-function updateButtonVisibility() {
-  prevBtn.forEach(btn => btn.classList.toggle('hidden', currentIndex === 0));  // Birinchi bosqichda prev yashirin
-  nextBtn.forEach(btn => btn.classList.toggle('hidden', currentIndex === currentTariffs.length - 1));  // Oxirgi bosqichda next yashirin
-}
-
-// Tarifni o'zgartirish funksiyasi
-function changeTariff(direction) {
-  currentIndex += direction;
-  currentIndex = Math.max(0, Math.min(currentIndex, currentTariffs.length - 1)); // Chegaralar
-  updateTariffValues(currentTariffs[currentIndex]);
-  currentInfoTextIndex = Math.min(currentIndex, infoTexts[currentTariffs === megafonTariffs ? 'megafon' : 'mtc'].length - 1);
-  functionsInfo.textContent = infoTexts[currentTariffs === megafonTariffs ? 'megafon' : 'mtc'][currentInfoTextIndex];
-  updateButtonVisibility();
-}
-
-// Next va Prev tugmalariga hodisa biriktirish
-nextBtn.forEach(btn => btn.addEventListener('click', () => changeTariff(1)));
-prevBtn.forEach(btn => btn.addEventListener('click', () => changeTariff(-1)));
-
-// Tugmalarni boshqarish
-megafonBtn.addEventListener('click', () => {
-  currentTariffs = megafonTariffs;
-  currentIndex = 0;  // Dastlabki bosqich
-  updateTariffValues(currentTariffs[currentIndex]);
-  currentInfoTextIndex = 0;
-  functionsInfo.textContent = infoTexts.megafon[currentInfoTextIndex];
-  updateButtonVisibility();
-  toggleActiveClass(megafonBtn, mtcBtn, megafonBtn2, mtcBtn2, infoTexts.megafon[currentInfoTextIndex]);
-});
-
-mtcBtn.addEventListener('click', () => {
-  currentTariffs = mtcTariffs;
-  currentIndex = 0;  // Dastlabki bosqich
-  updateTariffValues(currentTariffs[currentIndex]);
-  currentInfoTextIndex = 0;
-  functionsInfo.textContent = infoTexts.mtc[currentInfoTextIndex];
-  updateButtonVisibility();
-  toggleActiveClass(mtcBtn, megafonBtn, mtcBtn2, megafonBtn2, infoTexts.mtc[currentInfoTextIndex]);
-});
-
-megafonBtn2.addEventListener('click', () => {
-  currentTariffs = megafonTariffs; // O'zgarish
-  currentIndex = 0;  // Dastlabki bosqich
-  updateTariffValues(currentTariffs[currentIndex]);
-  currentInfoTextIndex = 0;
-  functionsInfo.textContent = infoTexts.megafon[currentInfoTextIndex];
-  updateButtonVisibility();
-  toggleActiveClass(megafonBtn2, megafonBtn, mtcBtn2, mtcBtn, infoTexts.megafon[currentInfoTextIndex]);
-});
-
-mtcBtn2.addEventListener('click', () => {
-  currentTariffs = mtcTariffs; // O'zgarish
-  currentIndex = 0;  // Dastlabki bosqich
-  updateTariffValues(currentTariffs[currentIndex]);
-  currentInfoTextIndex = 0;
-  functionsInfo.textContent = infoTexts.mtc[currentInfoTextIndex];
-  updateButtonVisibility();
-  toggleActiveClass(mtcBtn2, mtcBtn, megafonBtn2, megafonBtn, infoTexts.mtc[currentInfoTextIndex]);
-});
-
-// Boshlang'ich holatni yangilash
-updateTariffValues(currentTariffs[currentIndex]);
-updateButtonVisibility();
-functionsInfo.textContent = infoTexts.megafon[currentInfoTextIndex]; // Boshlang'ich matn
-
-
-// tarif modal 
-const tariffs = [
-  {
-    title: "Всегда.Связь МТС-1",
-    minutes: 500,
-    sms: 100,
-    gb: 200,
-    price: "500 р/мес",
-    sidebarsContent: [
-      {
-        title: "Откройте новые горизонты связи и интернета с нашим новым тарифным пакетом!",
-        info: "Представляем вам идеальное решение для активных пользователей, которые ценят удобство и эффективность."
-      },
-      {
-        title: "Удобство и экономия:",
-        features: [
-          "Все ваши потребности в одной подписке.",
-          "Больше не нужно искать дополнительные пакеты или переплачивать за лишний трафик."
-        ]
-      },
-      {
-        title: "Что включает наш тариф?",
-        features: [
-          "Используйте первую SIM-карту для всех ваших звонков и SMS, а вторую — для дополнительных интернет-активностей.",
-          "С 500 минутами и 100 SMS вам не придется беспокоиться о том, как вам связаться с близкими или коллегами."
-        ]
-      }
-    ]
-  },
-  {
-    title: "Всегда.Связь МТС-2",
-    minutes: 1000,
-    sms: 200,
-    gb: 300,
-    price: "800 р/мес",
-    sidebarsContent: [
-      {
-        title: "Лучшее решение для вашего общения!",
-        info: "Мы предлагаем уникальные условия для наших клиентов."
-      },
-      {
-        title: "Проверенная надежность:",
-        features: [
-          "Стабильное покрытие и быстрый интернет.",
-          "Легкость управления двумя SIM-картами."
-        ]
-      },
-      {
-        title: "Что включает наш тариф?",
-        features: [
-          "Неограниченные звонки и SMS на первом тарифе.",
-          "30 ГБ на первой SIM-карте и 10 ГБ на второй."
-        ]
-      }
-    ]
-  }
-];
-
-
-document.querySelectorAll('.more-details__tariff').forEach(button => {
-  button.addEventListener('click', () => {
-    const tariffIndex = button.dataset.tariff;
-    const selectedTariff = tariffs[tariffIndex];
-
-    // Modalni to'ldirish
-    document.querySelector('.modal-title').textContent = selectedTariff.title;
-    document.querySelector('.minut-count .tariff-box__count').textContent = selectedTariff.minutes;
-    document.querySelector('.sms-count .tariff-box__count').textContent = selectedTariff.sms;
-    document.querySelector('.gb-count .tariff-box__count').textContent = selectedTariff.gb;
-    document.querySelector('.tariff-price').textContent = selectedTariff.price;
-
-    // Sidebarni yangilash
-    const sidebarsContents = document.querySelectorAll('.sidebars-content');
-    sidebarsContents.forEach((content, index) => {
-      const sidebarData = selectedTariff.sidebarsContent[index];
-      content.querySelector('.sidebars-title').textContent = sidebarData.title;
-      content.querySelector('.sidebars-info').textContent = sidebarData.info || '';
-
-      const featuresList = content.querySelector('.features-list');
-      featuresList.innerHTML = ''; // Oldin tozalanadi
-      if (sidebarData.features) {
-        sidebarData.features.forEach(feature => {
-          const li = document.createElement('li');
-          li.textContent = feature;
-          featuresList.appendChild(li);
-        });
-      }
-    });
-
-    document.getElementById('tariffModal').style.display = 'block';
-  });
-});
-
-// Modalni yopish
-document.querySelector('.modal .close-btn').addEventListener('click', () => {
-  document.getElementById('tariffModal').style.display = 'none';
-});
+} catch (error) { }

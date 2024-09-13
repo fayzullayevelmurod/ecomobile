@@ -7,7 +7,7 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 a,
@@ -754,6 +754,14 @@ body.no-scroll {
   justify-content: center;
 }
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .modal {
   position: fixed;
   top: 0;
@@ -765,6 +773,7 @@ body.no-scroll {
   justify-content: center;
   display: none;
   z-index: 100;
+  animation: fade 0.2s ease-in-out;
 }
 .modal.show {
   display: flex;
@@ -799,6 +808,7 @@ body.no-scroll {
   max-height: 80vh;
   background: #fff;
   padding-right: 30px;
+  overflow-x: hidden;
 }
 .modal-content::-webkit-scrollbar {
   width: 3px;
@@ -814,8 +824,11 @@ body.no-scroll {
 }
 .modal .tariffs {
   display: flex;
-  gap: 59px;
+  gap: 1rem;
+  justify-content: space-between;
   margin: 20px 0 37px 0;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .modal .tariff-boxes {
   margin: 0;
@@ -969,6 +982,187 @@ body.no-scroll {
   transition: all 0.3s ease-in-out;
 }
 
+.select-modal .tariff-price {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 41.36px;
+  white-space: nowrap;
+}
+.select-modal .bonus-box {
+  white-space: nowrap;
+}
+.select-modal .flex-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.select-modal .flex-box .tariffs {
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.select-modal .flex-box .text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.select-modal .flex-box .text-box h5 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+}
+.select-modal .flex-box .text-box span {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 26px;
+  margin-top: -5px;
+  white-space: nowrap;
+  display: block;
+}
+.select-modal .forms {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.select-modal .form {
+  background: #E2E8EF;
+  border-radius: 24px;
+  padding: 40px 30px;
+}
+.select-modal .form-label {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  display: block;
+  margin-bottom: 30px;
+}
+.select-modal .input-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.select-modal input {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  color: #005DA6;
+  width: 100%;
+  border-radius: 24px;
+  padding: 12px 18px;
+  border: none;
+}
+.select-modal input::-moz-placeholder {
+  color: #005DA6;
+}
+.select-modal input::placeholder {
+  color: #005DA6;
+}
+.select-modal .inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.select-modal .punkt {
+  max-width: 579px;
+  width: 100%;
+}
+.select-modal .search-input {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+}
+.select-modal .search-input .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+}
+.select-modal .delivery-box {
+  margin: 28px 0 40px 0;
+}
+.select-modal .delivery-box .delivery-text {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  margin-bottom: 10px;
+  display: block;
+}
+.select-modal .checkboxes {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.select-modal .checkboxes input {
+  display: none;
+}
+.select-modal .checkboxes input:checked + label::after {
+  opacity: 1;
+}
+.select-modal .checkboxes label {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  padding-left: 30px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.select-modal .checkboxes label span {
+  text-align: left;
+  display: inline-block;
+}
+.select-modal .checkboxes label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 19px;
+  height: 19px;
+  border: 2px solid #005DA6;
+  border-radius: 50%;
+}
+.select-modal .checkboxes label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #005DA6;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.select-modal .map {
+  height: 324px;
+  border-radius: 24px;
+}
+.select-modal .map iframe {
+  border: none;
+  border-radius: 24px;
+}
+.select-modal .map-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  display: block;
+  text-align: center;
+  margin-top: 37px;
+}
+.select-modal .map-checkbox {
+  text-align: center;
+  margin-top: 20px;
+  justify-content: center;
+}
+.select-modal .modal-bottom {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
 .thanks-modal .scroll-box {
   padding: 90px 20px;
 }
@@ -1040,7 +1234,25 @@ body.no-scroll {
   top: -7px;
 }
 
+@media screen and (max-width: 1024px) {
+  .modal .sidebars {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  .modal .sidebars .right-box {
+    order: -1;
+    width: 100%;
+  }
+}
 @media screen and (max-width: 992px) {
+  .modal .scroll-box {
+    padding: 20px 5px 20px 20px;
+    border-radius: 20px;
+  }
+  .modal-title {
+    font-size: 25px;
+    line-height: 30px;
+  }
   .title {
     font-size: 40px;
     line-height: 46px;
@@ -1242,6 +1454,77 @@ body.no-scroll {
     line-height: 22px;
   }
   .any-doubts__img {
+    width: 100%;
+  }
+  .modal .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 12px;
+    width: 25px;
+    height: 25px;
+  }
+  .modal .tariffs {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .modal-content {
+    padding-right: 10px;
+  }
+  .modal .checkbox-box .checkbox-label,
+  .modal .sidebars-info {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .modal .sidebars-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .modal .tariff-boxes .tariff-box__count {
+    font-size: 20px;
+  }
+  .modal .tariff-boxes .tariff-box__status {
+    font-size: 16px;
+  }
+  .modal .tariff-boxes .tariff-box {
+    width: 75px;
+    height: 75px;
+  }
+  .modal .sidebars .tariff-price {
+    font-size: 25px;
+    line-height: 30px;
+    margin: 30px 0;
+  }
+  .thanks-modal .modal-info {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .thanks-modal .modal-content {
+    padding-right: 20px;
+  }
+  .thanks-modal .modal-info {
+    margin: 30px 0;
+  }
+  .select-modal .inputs {
+    flex-direction: column;
+  }
+  .select-modal .inputs > div {
+    max-width: 100%;
+  }
+  .select-modal .form {
+    padding: 20px;
+  }
+  .select-modal .input-box {
+    flex-direction: column;
+  }
+  .select-modal .checkboxes,
+  .select-modal .flex-box {
+    flex-wrap: wrap;
+  }
+  .select-modal .modal-bottom {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .select-modal .modal-bottom button {
     width: 100%;
   }
 }
