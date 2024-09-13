@@ -920,7 +920,7 @@ body {
   justify-content: center;
   display: none;
   z-index: 100;
-animation: fade .2s ease-in-out;
+  animation: fade .2s ease-in-out;
 
   &.show {
     display: flex;
@@ -1378,6 +1378,14 @@ animation: fade .2s ease-in-out;
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
+    position: relative;
+
+    .btn-primary {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -1588,6 +1596,11 @@ animation: fade .2s ease-in-out;
 @media screen and (max-width: 768px) {
   .intro-slider .swiper-slide {
     flex-direction: column;
+  }
+
+  .select-modal .modal-bottom .btn-primary {
+    position: unset;
+    transform: none;
   }
 
   .intro-slider__img {

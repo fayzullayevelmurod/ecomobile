@@ -1161,6 +1161,13 @@ body.no-scroll {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
+  position: relative;
+}
+.select-modal .modal-bottom .btn-primary {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .thanks-modal .scroll-box {
@@ -1327,6 +1334,10 @@ body.no-scroll {
 @media screen and (max-width: 768px) {
   .intro-slider .swiper-slide {
     flex-direction: column;
+  }
+  .select-modal .modal-bottom .btn-primary {
+    position: unset;
+    transform: none;
   }
   .intro-slider__img {
     width: 100%;
