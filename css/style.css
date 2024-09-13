@@ -1112,6 +1112,10 @@ body.no-scroll {
   .intro-slider .swiper-slide {
     flex-direction: column;
   }
+  .intro-slider__img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
   .header .nav {
     top: 83px;
   }
