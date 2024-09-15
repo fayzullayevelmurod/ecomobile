@@ -895,7 +895,9 @@ body {
 // media start
 
 // modal start
-
+.delivery-sim__cart {
+  display: inline-block;
+}
 @keyframes fade {
   0% {
     opacity: 0;
@@ -1297,10 +1299,8 @@ body {
     input {
       display: none;
 
-      &:checked + label {
-        &::after {
-          opacity: 1;
-        }
+      &:checked + label::after {
+        opacity: 1;
       }
     }
 

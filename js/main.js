@@ -817,41 +817,6 @@ try {
         });
       });
     }
-    // function openModal(tariff) {
-    //   modals.forEach((modal) => {
-    //     const modalTitle = modal.querySelector('.modal-title');
-    //     const modalMinutesCount = modal.querySelector('.modal-minutes-count');
-    //     const modalSmsCount = modal.querySelector('.modal-sms-count');
-    //     const modalGbCount = modal.querySelector('.modal-gb-count');
-    //     const modalBonusGb = modal.querySelector('.modal-bonus-gb');
-    //     const modalTariffPrice = modal.querySelector('.modal-tariff-price');
-    //     const modalSidebarsContent = modal.querySelector('.sidebars-content');
-    //     const tariffInfoTitle = document.querySelector('.tariff-info__title');
-    //     const tariffDesc = document.querySelector('.tariff-desc');
-    //     const tariffAdvantages = document.querySelector('.tariff-advantages');
-    //     const tariffAdvantagesList = document.querySelector(
-    //       '.tariff-advantages__list'
-    //     );
-    //     const tariffPlan = document.querySelector('.tariff-plan');
-    //     const tariffPlanList = document.querySelector('.tariff-plan__list');
-    //     const whyChooseUs = document.querySelector('.why-choose__us');
-    //     const whyChooseUsList = document.querySelector('.why-choose__us-list');
-
-    //     modalTitle.textContent = `Всегда.Связь ${
-    //       currentTariffs === megafonTariffs ? 'Мегафон' : 'МТС'
-    //     }-${currentIndex + 1}`;
-    //     modalMinutesCount.textContent = `${tariff.minut}`;
-    //     modalSmsCount.textContent = `${tariff.sms}`;
-    //     modalGbCount.textContent = `${tariff.gb}`;
-    //     modalBonusGb.textContent = `+ ${tariff.bonus} гб`;
-    //     modalTariffPrice.textContent = tariff.price;
-    //     tariffInfoTitle.textContent = tariff.tariffInfoTitle;
-    //     tariffDesc.textContent = tariff.tariffDesc;
-    //     tariffAdvantages.textContent =
-    //       tariff.tariffAdvantages.tariffAdvantagesTitle;
-    //     // tariffAdvantagesList.appendChild = tariff.tariffAdvantages
-    //   });
-    // }
 
     // Modalni yopish funksiyasi
     function closeModal() {
@@ -962,26 +927,70 @@ try {
 } catch (error) {
   console.log(error);
 }
-// tarif ============================================================================================================================================================
-
+// tarif ==========================================================================================================================================================
 // Modallar va tugmalar bilan ishlash uchun optimallashtirilgan kod
 try {
-  const cards = document.querySelectorAll('.all-tariffs__card'); // Tariff kartalari
-  const modals = document.querySelectorAll('.modal'); // Barcha modallar
-  const closeModalButtons = document.querySelectorAll('.close-modal'); // Modalni yopish tugmalari
-  const closeModalButtons2 = document.querySelectorAll('.close-modal-2'); // Modalni yopish tugmalari
+  // Elementlarni tanlash
+  const cards = document.querySelectorAll('.all-tariffs__card');
+  const modals = document.querySelectorAll('.modal');
+  const closeModalButtons = document.querySelectorAll(
+    '.close-modal, .close-modal-2'
+  );
   const modalTriggers = document.querySelectorAll(
     '[data-modal="thanks-modal"]'
-  ); // "thanks-modal" ochish uchun tugmalar
-  const selectButtons = document.querySelectorAll(
-    '.btn-primary[data-modal="thanks-modal"]'
-  ); // "thanks-modal" uchun maxsus tugmalar
+  );
+  const modalOpenButtons = document.querySelectorAll('[data-modal]');
+
+  // Tariff kartalari va ularga tegishli matnlar
+  const simCards = [
+    {
+      card: document.querySelector('.delivery-sim__card-1'),
+      text: document.querySelector('.delivery-sim__card-1-text'),
+    },
+    {
+      card: document.querySelector('.delivery-sim__card-2'),
+      text: document.querySelector('.delivery-sim__card-2-text'),
+    },
+    {
+      card: document.querySelector('.delivery-sim__card-3'),
+      text: document.querySelector('.delivery-sim__card-3-text'),
+    },
+    {
+      card: document.querySelector('.delivery-sim__card-4'),
+      text: document.querySelector('.delivery-sim__card-4-text'),
+    },
+    {
+      card: document.querySelector('.delivery-sim__card-5'),
+      text: document.querySelector('.delivery-sim__card-5-text'),
+    },
+    {
+      card: document.querySelector('.delivery-sim__card-6'),
+      text: document.querySelector('.delivery-sim__card-6-text'),
+    },
+    {
+      card: document.querySelector('.delivery-sim__card-7'),
+      text: document.querySelector('.delivery-sim__card-7-text'),
+    },
+    {
+      card: document.querySelector('.delivery-sim__card-8'),
+      text: document.querySelector('.delivery-sim__card-8-text'),
+    },
+  ];
+
+  // Har bir sim karta uchun o'zgaruvchilarni yaratish va voqealarni ulash
+  simCards.forEach(({ card, text }) => {
+    card.addEventListener('change', () => {
+      if (card.checked) {
+        text.textContent = 'перейти со своим номером';
+      } else {
+        text.textContent = 'получу доставкой';
+      }
+    });
+  });
 
   // Barcha modallarni yopish funksiyasi
   function closeAllModals() {
-    modals.forEach((modal) => {
-      modal.classList.remove('show');
-    });
+    modals.forEach((modal) => modal.classList.remove('show'));
     document.body.style.overflow = ''; // Body scrollni tiklash
   }
 
@@ -1004,52 +1013,40 @@ try {
   // Tariff kartasi bosilganda modal ochish
   cards.forEach((card) => {
     card.addEventListener('click', function () {
-      const modalId = card.getAttribute('data-modal'); // Kartadagi "data-modal" qiymatini olish
-      showModal(modalId); // Modalni ochish
+      const modalId = card.getAttribute('data-modal');
+      showModal(modalId);
     });
   });
 
-  // Modalni ochish tugmalari uchun hodisalar
+  // Modal ochish tugmalari uchun hodisalar
   modalTriggers.forEach((button) => {
     button.addEventListener('click', function () {
-      const currentModal = button.closest('.modal'); // Tugma tegishli modalni topadi
-      if (currentModal) {
-        closeModal(currentModal); // Hozirgi modalni yopish
-      }
-      showModal('thanks-modal'); // "thanks-modal"ni ochish
+      const currentModal = button.closest('.modal');
+      if (currentModal) closeModal(currentModal);
+      showModal('thanks-modal');
     });
   });
 
-  // Modalni yopish tugmalari uchun hodisalar
+  // Modal yopish tugmalari uchun hodisalar
   closeModalButtons.forEach((button) => {
     button.addEventListener('click', function () {
-      const modal = button.closest('.modal'); // Tegishli modalni topish
-      closeModal(modal); // Modalni yopish
-    });
-  });
-  closeModalButtons2.forEach((button) => {
-    button.addEventListener('click', function () {
-      const modal = button.closest('.modal'); // Tegishli modalni topish
-      closeModal(modal); // Modalni yopish
+      const modal = button.closest('.modal');
+      closeModal(modal);
     });
   });
 
-  // Modal tashqarisini bosganda modalni yopish
+  // Modal tashqarisiga bosilganda yopish
   modals.forEach((modal) => {
     modal.addEventListener('click', function (event) {
-      if (event.target === modal) {
-        closeModal(modal); // Tashqarisiga bosilganda modalni yopish
-      }
+      if (event.target === modal) closeModal(modal);
     });
   });
 
-  // Umumiy ochish tugmalari uchun hodisalar
-  const modalOpenButtons = document.querySelectorAll('[data-modal]'); // Barcha "data-modal" atributiga ega tugmalar
-
+  // Barcha modal ochuvchi tugmalar uchun hodisalar
   modalOpenButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const modalId = button.getAttribute('data-modal'); // Tugmadagi "data-modal" qiymatini olish
-      showModal(modalId); // Modalni ochish
+    button.addEventListener('click', function () {
+      const modalId = button.getAttribute('data-modal');
+      showModal(modalId);
     });
   });
 } catch (error) {
