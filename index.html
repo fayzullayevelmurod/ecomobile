@@ -176,12 +176,12 @@
                   <div class="left-box__top">
                     <h4 class="select-tariff__content-title">основной номер</h4>
                     <div class="checkbox-box">
-                      <input class="checkbox-input" type="checkbox" checked id="checkbox-1">
+                      <input class="checkbox-input your-number" type="checkbox" checked id="checkbox-1">
                       <label class="checkbox" for="checkbox-1"></label>
                       <span class="checkbox-label">Перейти со своим номером</span>
                     </div>
                     <div class="checkbox-box">
-                      <input class="checkbox-input" type="checkbox" id="checkbox-s">
+                      <input class="checkbox-input e-sim__number" type="checkbox" id="checkbox-s">
                       <label class="checkbox" for="checkbox-s"></label>
                       <span class="checkbox-label">eSim</span>
                     </div>
@@ -241,7 +241,7 @@
                   <div class="left-box__top">
                     <h4 class="select-tariff__content-title">дополнительный номер</h4>
                     <div class="checkbox-box">
-                      <input class="checkbox-input" type="checkbox" name="" id="checkbox-2">
+                      <input class="checkbox-input e-sim__number-additional" type="checkbox" name="" id="checkbox-2">
                       <label class="checkbox" for="checkbox-2"></label>
                       <span class="checkbox-label">eSim</span>
                     </div>
@@ -421,8 +421,8 @@
           <div class="sidebars">
             <div class="left-box">
               <div class="sidebars-content">
-                <h4 class="sidebars-title">Преобразите свой опыт связи с нашим новым тарифом!</h4>
-                <p class="sidebars-info">
+                <h4 class="sidebars-title tariff-info__title">Преобразите свой опыт связи с нашим новым тарифом!</h4>
+                <p class="sidebars-info tariff-desc">
                   Мы рады представить вам уникальный агрегированный продукт, который объединяет все ваши потребности в
                   связи
                   и интернете в одном удобном решении. С двумя SIM-картами вы получите максимальную гибкость и
@@ -430,8 +430,8 @@
                 </p>
               </div>
               <div class="sidebars-content">
-                <h4 class="sidebars-title">Преимущества нашего тарифа:</h4>
-                <ul>
+                <h4 class="sidebars-title tariff-advantages">Преимущества нашего тарифа:</h4>
+                <ul class="tariff-advantages__list">
                   <li>
                     <a href="#!">Все в одном:</a>
                     <span>Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета.
@@ -450,8 +450,8 @@
                 </ul>
               </div>
               <div class="sidebars-content">
-                <h4 class="sidebars-title">Что включает наш тариф?</h4>
-                <ul>
+                <h4 class="sidebars-title tariff-plan">Что включает наш тариф?</h4>
+                <ul class="tariff-plan__list">
                   <li>
                     <a href="#!">Первая SIM-карта:</a>
                     1000 минут для звонков, 500 SMS и 30 ГБ интернета. Идеально для тех, кто активно общается и часто
@@ -465,8 +465,8 @@
                 </ul>
               </div>
               <div class="sidebars-content">
-                <h4 class="sidebars-title">Что включает наш тариф?</h4>
-                <ul>
+                <h4 class="sidebars-title why-choose__us">Почему это ваш идеальный выбор?</h4>
+                <ul class="why-choose__us-list">
                   <li>
                     <a href="#!">Экономия и удобство:</a>
                     Получите все необходимые услуги по выгодной цене и не тратьте время на поиск дополнительных пакетов.
@@ -487,17 +487,17 @@
             <div class="right-box">
               <div class="checkbox-content">
                 <div class="checkbox-box">
-                  <input class="checkbox-input" type="checkbox" checked="" id="checkbox-4">
-                  <label class="checkbox" for="checkbox-4"></label>
+                  <input class="checkbox-input your-number" type="checkbox" checked id="your-number">
+                  <label class="checkbox" for="your-number"></label>
                   <span class="checkbox-label">Перейти со своим номером</span>
                 </div>
                 <div class="checkbox-box">
-                  <input class="checkbox-input" type="checkbox" checked="" id="checkbox-5">
+                  <input class="checkbox-input e-sim__number" type="checkbox" id="checkbox-5">
                   <label class="checkbox" for="checkbox-5"></label>
                   <span class="checkbox-label">Основная sim-карта: e-SIM</span>
                 </div>
                 <div class="checkbox-box">
-                  <input class="checkbox-input" type="checkbox" checked="" id="checkbox-6">
+                  <input class="checkbox-input e-sim__number-additional" type="checkbox" id="checkbox-6">
                   <label class="checkbox" for="checkbox-6"></label>
                   <span class="checkbox-label">Дополнительная sim-карта: e-SIM</span>
                 </div>
@@ -540,7 +540,7 @@
               <div class="text-box">
                 <div>
                   <h5>Основная СИМ-карта:</h5>
-                  <span>физическая, перейти со своим номером</span>
+                  <span>физическая, <div class="your-number__text">перейти со своим номером</div></span>
                 </div>
                 <div>
                   <h5>Дополнительная СИМ-карта:</h5>
@@ -571,16 +571,16 @@
               <div class="delivery-box">
                 <span class="delivery-text">Способ доставки</span>
                 <div class="checkboxes">
-                  <input type="radio" checked id="check-1" name="radio-one">
-                  <label for="check-1">
-                    <span>Способ доставки</span>
+                  <input type="radio" checked id="radio-check-1" name="radio-one">
+                  <label for="radio-check-1">
+                    <span>СДЭК</span>
                   </label>
-                  <input type="radio" id="check-2" name="radio-one">
-                  <label for="check-2">
-                    <span>Почта Росии</span>
+                  <input type="radio" id="radio-check-2" name="radio-one">
+                  <label for="radio-check-2">
+                    <span>Почта России</span>
                   </label>
-                  <input type="radio" id="check-3" name="radio-one">
-                  <label for="check-3">
+                  <input type="radio" id="radio-check-3" name="radio-one">
+                  <label for="radio-check-3">
                     <span>Самовывоз</span>
                   </label>
                 </div>

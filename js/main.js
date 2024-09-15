@@ -99,6 +99,56 @@ try {
     const moreDetailsBtns = document.querySelectorAll('.more-details__tariff');
     const selectedTarifBtn = document.querySelector('.select-tariff__btn');
     const selectTariffBottom = document.querySelector('.select-tariff__bottom-info');
+    const yourNumber = document.querySelectorAll('.your-number');
+    const eSimNumber = document.querySelectorAll('.e-sim__number');
+    const eSimNumberAdditional = document.querySelectorAll('.e-sim__number-additional');
+    const yourNumberText = document.querySelector('.your-number__text');
+
+    yourNumber.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          yourNumberText.textContent = 'перейти со своим номером';
+          yourNumber.forEach(function (box) {
+            box.checked = true;
+          });
+        } else {
+          yourNumber.forEach(function (box) {
+            box.checked = false;
+          });
+          yourNumberText.textContent = 'получу доставкой';
+        }
+      });
+    });
+
+    eSimNumber.forEach(function (checkbox) {
+      checkbox.checked = false;
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          eSimNumber.forEach(function (box) {
+            box.checked = true;
+          });
+        } else {
+          eSimNumber.forEach(function (box) {
+            box.checked = false;
+          });
+        }
+      });
+    });
+
+    eSimNumberAdditional.forEach(function (checkbox) {
+      checkbox.checked = false;
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          eSimNumberAdditional.forEach(function (box) {
+            box.checked = true;
+          });
+        } else {
+          eSimNumberAdditional.forEach(function (box) {
+            box.checked = false;
+          });
+        }
+      });
+    });
 
     function toggleActiveClass(activeBtn, inactiveBtn1, inactiveBtn2, linkedBtn, infoText) {
       activeBtn.classList.add('active');
@@ -120,17 +170,219 @@ try {
 
     // Tariflar uchun qiymatlar
     const megafonTariffs = [
-      { minut: 500, sms: 100, gb: 20, bonus: 10, price: '500 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-1 составляет 500 рублей в месяц' },
-      { minut: 1000, sms: 500, gb: 30, bonus: 15, price: '700 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-2 составляет 700 рублей в месяц' },
-      { minut: 2000, sms: 1000, gb: 50, bonus: 25, price: '900 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-3 составляет 900 рублей в месяц' },
-      { minut: 3500, sms: 1000, gb: 50, bonus: 25, price: '1300 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-4 составляет 1300 рублей в месяц' }
+      {
+        minut: 500,
+        sms: 100,
+        gb: 20,
+        bonus: 10,
+        price: '500 р/мес',
+        bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мегафон-1 составляет 500 рублей в месяц',
+        tariffInfoTitle: 'Tarif info title'
+      },
+      {
+        minut: 1000,
+        sms: 500, gb: 30,
+        bonus: 15, price: '700 р/мес',
+        bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мегафон-2 составляет 700 рублей в месяц',
+        tariffInfoTitle: 'Tarif info title',
+        tariffDesc: 'Tarif desc',
+        tariffAdvantages: [
+          {
+            tariffAdvantagesTitle: 'Title list',
+            tariffAdvantagesList: `
+              <li>
+                <a href="#!">Все в одном:</a>
+                <span>Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета. Больше не нужно выбирать между минутами и трафиком — у вас будет всё, что вам нужно.</span>
+              </li>
+              <li>
+                <a href="#!">Максимум возможностей:</a>
+                <span>С 1000 минутами и 500 SMS у вас будет достаточно средств для общения, а дополнительные 15 ГБ интернета обеспечат вам надежное подключение для всех онлайн-активностей.</span>
+              </li>
+              <li>
+                <a href="#!">Гибкость и комфорт:</a>
+                <span>Подключите обе SIM-карты к одному тарифу и наслаждайтесь идеальным сочетанием связи и интернета, где бы вы ни находились.</span>
+              </li>
+            `
+          }
+        ]
+      },
+      {
+        minut: 2000,
+        sms: 1000,
+        gb: 50,
+        bonus: 25,
+        price: '900 р/мес',
+        bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мегафон-3 составляет 900 рублей в месяц',
+        tariffInfoTitle: 'Tarif info title',
+        tariffDesc: 'Tarif desc',
+        tariffAdvantages: [
+          {
+            tariffAdvantagesTitle: 'Title list',
+            tariffAdvantagesList: `
+              <li>
+                <a href="#!">Все в одном:</a>
+                <span>Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета. Больше не нужно выбирать между минутами и трафиком — у вас будет всё, что вам нужно.</span>
+              </li>
+              <li>
+                <a href="#!">Максимум возможностей:</a>
+                <span>С 1000 минутами и 500 SMS у вас будет достаточно средств для общения, а дополнительные 15 ГБ интернета обеспечат вам надежное подключение для всех онлайн-активностей.</span>
+              </li>
+              <li>
+                <a href="#!">Гибкость и комфорт:</a>
+                <span>Подключите обе SIM-карты к одному тарифу и наслаждайтесь идеальным сочетанием связи и интернета, где бы вы ни находились.</span>
+              </li>
+            `
+          }
+        ]
+      },
+      {
+        minut: 3500,
+        sms: 1000,
+        gb: 50,
+        bonus: 25,
+        price: '1300 р/мес',
+        bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мегафон-4 составляет 1300 рублей в месяц',
+        tariffInfoTitle: 'Tarif info title',
+        tariffDesc: 'Tarif desc',
+        tariffAdvantages: [
+          {
+            tariffAdvantagesTitle: 'Title list',
+            tariffAdvantagesList: `
+              <li>
+                <a href="#!">Все в одном:</a>
+                <span>Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета. Больше не нужно выбирать между минутами и трафиком — у вас будет всё, что вам нужно.</span>
+              </li>
+              <li>
+                <a href="#!">Максимум возможностей:</a>
+                <span>С 1000 минутами и 500 SMS у вас будет достаточно средств для общения, а дополнительные 15 ГБ интернета обеспечат вам надежное подключение для всех онлайн-активностей.</span>
+              </li>
+              <li>
+                <a href="#!">Гибкость и комфорт:</a>
+                <span>Подключите обе SIM-карты к одному тарифу и наслаждайтесь идеальным сочетанием связи и интернета, где бы вы ни находились.</span>
+              </li>
+            `
+          }
+        ]
+      }
     ];
 
     const mtcTariffs = [
-      { minut: 700, sms: 300, gb: 50, bonus: 25, price: '650 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-1 составляет 650 рублей в месяц' },
-      { minut: 1000, sms: 300, gb: 60, bonus: 30, price: '800 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-2 составляет 800 рублей в месяц' },
-      { minut: 1500, sms: 500, gb: 80, bonus: 40, price: '1000 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-3 составляет 1000 рублей в месяц' },
-      { minut: 2000, sms: 1000, gb: 80, bonus: 40, price: '1150 р/мес', bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-4 составляет 1150 рублей в месяц' }
+      {
+        minut: 700,
+        sms: 300,
+        gb: 50,
+        bonus: 25,
+        price: '650 р/мес',
+        bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-1 составляет 650 рублей в месяц',
+        tariffInfoTitle: 'Tarif info title',
+        tariffDesc: 'Tarif desc',
+        tariffAdvantages: [
+          {
+            tariffAdvantagesTitle: 'Title list',
+            tariffAdvantagesList: `
+              <li>
+                <a href="#!">Все в одном:</a>
+                <span>Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета. Больше не нужно выбирать между минутами и трафиком — у вас будет всё, что вам нужно.</span>
+              </li>
+              <li>
+                <a href="#!">Максимум возможностей:</a>
+                <span>С 1000 минутами и 500 SMS у вас будет достаточно средств для общения, а дополнительные 15 ГБ интернета обеспечат вам надежное подключение для всех онлайн-активностей.</span>
+              </li>
+              <li>
+                <a href="#!">Гибкость и комфорт:</a>
+                <span>Подключите обе SIM-карты к одному тарифу и наслаждайтесь идеальным сочетанием связи и интернета, где бы вы ни находились.</span>
+              </li>
+            `
+          }
+        ],
+      },
+      {
+        minut: 1000,
+        sms: 300,
+        gb: 60,
+        bonus: 30,
+        price: '800 р/мес',
+        bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-2 составляет 800 рублей в месяц',
+        tariffInfoTitle: 'Tarif info title',
+        tariffDesc: 'Tarif desc',
+        tariffAdvantages: [
+          {
+            tariffAdvantagesTitle: 'Title list',
+            tariffAdvantagesList: `
+              <li>
+                <a href="#!">Все в одном:</a>
+                <span>Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета. Больше не нужно выбирать между минутами и трафиком — у вас будет всё, что вам нужно.</span>
+              </li>
+              <li>
+                <a href="#!">Максимум возможностей:</a>
+                <span>С 1000 минутами и 500 SMS у вас будет достаточно средств для общения, а дополнительные 15 ГБ интернета обеспечат вам надежное подключение для всех онлайн-активностей.</span>
+              </li>
+              <li>
+                <a href="#!">Гибкость и комфорт:</a>
+                <span>Подключите обе SIM-карты к одному тарифу и наслаждайтесь идеальным сочетанием связи и интернета, где бы вы ни находились.</span>
+              </li>
+            `
+          }
+        ]
+      },
+      {
+        minut: 1500,
+        sms: 500,
+        gb: 80,
+        bonus: 40,
+        price: '1000 р/мес',
+        bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-3 составляет 1000 рублей в месяц',
+        tariffInfoTitle: 'Tarif info title',
+        tariffDesc: 'Tarif desc',
+        tariffAdvantages: [
+          {
+            tariffAdvantagesTitle: 'Title list',
+            tariffAdvantagesList: `
+              <li>
+                <a href="#!">Все в одном:</a>
+                <span>Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета. Больше не нужно выбирать между минутами и трафиком — у вас будет всё, что вам нужно.</span>
+              </li>
+              <li>
+                <a href="#!">Максимум возможностей:</a>
+                <span>С 1000 минутами и 500 SMS у вас будет достаточно средств для общения, а дополнительные 15 ГБ интернета обеспечат вам надежное подключение для всех онлайн-активностей.</span>
+              </li>
+              <li>
+                <a href="#!">Гибкость и комфорт:</a>
+                <span>Подключите обе SIM-карты к одному тарифу и наслаждайтесь идеальным сочетанием связи и интернета, где бы вы ни находились.</span>
+              </li>
+            `
+          }
+        ]
+      },
+      {
+        minut: 2000,
+        sms: 1000,
+        gb: 80,
+        bonus: 40,
+        price: '1150 р/мес',
+        bottomPrice: 'Абонентская плата по тарифу Всегда.Связь Мтс-4 составляет 1150 рублей в месяц',
+        tariffInfoTitle: 'Tarif info title',
+        tariffDesc: 'Tarif desc',
+        tariffAdvantages: [
+          {
+            tariffAdvantagesTitle: 'Title list',
+            tariffAdvantagesList: `
+              <li>
+                <a href="#!">Все в одном:</a>
+                <span>Используйте первую SIM-карту для звонков и SMS, а вторую — для неограниченного интернета. Больше не нужно выбирать между минутами и трафиком — у вас будет всё, что вам нужно.</span>
+              </li>
+              <li>
+                <a href="#!">Максимум возможностей:</a>
+                <span>С 1000 минутами и 500 SMS у вас будет достаточно средств для общения, а дополнительные 15 ГБ интернета обеспечат вам надежное подключение для всех онлайн-активностей.</span>
+              </li>
+              <li>
+                <a href="#!">Гибкость и комфорт:</a>
+                <span>Подключите обе SIM-карты к одному тарифу и наслаждайтесь идеальным сочетанием связи и интернета, где бы вы ни находились.</span>
+              </li>
+            `
+          }
+        ]
+      }
     ];
 
     // Bosqich holatini saqlash
@@ -145,11 +397,12 @@ try {
       gbCount.textContent = tariff.gb;
       bonusCount.textContent = tariff.bonus;
       tariffPrice.textContent = tariff.price;
-      selectTariffBottom.textContent = tariff.bottomPrice
+      selectTariffBottom.textContent = tariff.bottomPrice;
     }
     const selectOpenModalBtn = document.querySelector('.select-modal__open');
     const selectModal = document.querySelector('.select-modal');
-    const infoModal = document.querySelector('.info-modal')
+    const infoModal = document.querySelector('.info-modal');
+
     // Modalni ochish funksiyasi
     function openModal(tariff) {
       modals.forEach(modal => {
@@ -160,6 +413,14 @@ try {
         const modalBonusGb = modal.querySelector('.modal-bonus-gb');
         const modalTariffPrice = modal.querySelector('.modal-tariff-price');
         const modalSidebarsContent = modal.querySelector('.sidebars-content');
+        const tariffInfoTitle = infoModal.querySelector('.tariff-info__title');
+        const tariffDesc = infoModal.querySelector('.tariff-desc');
+        const tariffAdvantages = infoModal.querySelector('.tariff-advantages');
+        const tariffAdvantagesList = infoModal.querySelector('.tariff-advantages__list');
+        const tariffPlan = infoModal.querySelector('.tariff-plan');
+        const tariffPlanList = infoModal.querySelector('.tariff-plan__list');
+        const whyChooseUs = infoModal.querySelector('.why-choose__us')
+        const whyChooseUsList = infoModal.querySelector('.why-choose__us-list');
 
 
         modalTitle.textContent = `Всегда.Связь ${currentTariffs === megafonTariffs ? 'Мегафон' : 'МТС'}-${currentIndex + 1}`;

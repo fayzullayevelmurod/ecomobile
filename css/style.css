@@ -267,6 +267,11 @@ body.no-scroll {
   color: #005DA5;
 }
 
+.select-tariff .megafon-btn-2,
+.select-tariff .mtc-btn-2 {
+  pointer-events: none;
+  cursor: default;
+}
 .select-tariff__container {
   border-radius: 24px;
   background: #E2E8EF;
@@ -1326,6 +1331,7 @@ body.no-scroll {
   }
   .intro .about-us {
     padding: 25px;
+    position: relative;
   }
   .footer .container {
     flex-wrap: wrap;
@@ -1538,6 +1544,14 @@ body.no-scroll {
   .select-modal .modal-bottom button {
     width: 100%;
   }
+  .intro .about-us {
+    padding: 25px 25px 65px 25px;
+  }
+  .intro .about-us__content .next-btn {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+  }
 }
 @media screen and (max-width: 500px) {
   .swiper-horizontal > .swiper-pagination-bullets,
@@ -1580,4 +1594,8 @@ body.no-scroll {
   line-height: 26px;
   display: block;
   margin-top: -5px;
+}
+
+.your-number__text {
+  display: inline-block;
 }/*# sourceMappingURL=style.css.map */
