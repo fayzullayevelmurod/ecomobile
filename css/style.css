@@ -87,7 +87,7 @@ body.no-scroll {
   font-weight: 500;
   line-height: normal;
   text-align: center;
-  color: #005DA5;
+  color: #005da5;
 }
 
 .btn-primary,
@@ -98,22 +98,22 @@ body.no-scroll {
   font-weight: 500;
   line-height: 26px;
   color: #fff;
-  background: #005DA6;
-  border: 1px solid #005DA6;
+  background: #005da6;
+  border: 1px solid #005da6;
   transition: all 0.2s ease-in-out;
 }
 .btn-primary:hover,
 .btn-outline-primary:hover {
   background: transparent;
-  color: #005DA5;
+  color: #005da5;
 }
 
 .btn-outline-primary {
   background: transparent;
-  color: #005DA5;
+  color: #005da5;
 }
 .btn-outline-primary:hover {
-  background: #005DA5;
+  background: #005da5;
   color: #fff;
 }
 
@@ -126,7 +126,7 @@ body.no-scroll {
   }
 }
 .header {
-  background: #EAECEE;
+  background: #eaecee;
   padding: 26px 0;
   border-radius: 0 0 24px 24px;
 }
@@ -148,7 +148,7 @@ body.no-scroll {
   font-size: 20px;
   font-weight: 700;
   line-height: 22.98px;
-  color: #005DA5;
+  color: #005da5;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -164,7 +164,7 @@ body.no-scroll {
   transition: all 0.2s ease-in-out;
 }
 .header .nav-link:hover {
-  color: #005DA5;
+  color: #005da5;
 }
 
 .intro-top__content {
@@ -176,7 +176,7 @@ body.no-scroll {
   font-size: 30px;
   font-weight: 300;
   line-height: 36.62px;
-  color: #005DA6;
+  color: #005da6;
 }
 .intro-title__box {
   display: flex;
@@ -188,10 +188,10 @@ body.no-scroll {
   font-size: 90px;
   font-weight: 500;
   line-height: 103.41px;
-  color: #005DA5;
+  color: #005da5;
 }
 .intro-slider {
-  background: #E2E8EF;
+  background: #e2e8ef;
   padding: 0 54px;
   border-radius: 24px;
 }
@@ -230,7 +230,7 @@ body.no-scroll {
 .intro .about-us {
   padding: 26px 100px;
   border-radius: 24px;
-  background: #EAECEE;
+  background: #eaecee;
   margin: 70px 0;
 }
 .intro .about-us__content {
@@ -243,7 +243,7 @@ body.no-scroll {
 .intro .about-us__content-header {
   display: flex;
   align-items: center;
-  color: #005DA6;
+  color: #005da6;
   justify-content: space-between;
   margin-bottom: 30px;
   flex-wrap: wrap;
@@ -261,10 +261,10 @@ body.no-scroll {
   display: flex;
   align-items: center;
   gap: 16px;
-  color: #005DA5;
+  color: #005da5;
 }
 .intro .about-us__content-link {
-  color: #005DA5;
+  color: #005da5;
 }
 
 .select-tariff .megafon-btn-2,
@@ -274,7 +274,7 @@ body.no-scroll {
 }
 .select-tariff__container {
   border-radius: 24px;
-  background: #E2E8EF;
+  background: #e2e8ef;
   padding: 50px 85px;
 }
 .select-tariff__title {
@@ -291,7 +291,7 @@ body.no-scroll {
 }
 .select-tariff__content {
   border-radius: 20px;
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -302,7 +302,7 @@ body.no-scroll {
   font-size: 30px;
   font-weight: 300;
   line-height: 36.62px;
-  color: #005DA5;
+  color: #005da5;
 }
 .select-tariff__bottom {
   text-align: center;
@@ -330,7 +330,7 @@ body.no-scroll {
   gap: 14px;
 }
 .select-tariff .left-box .btn-outline-primary.active {
-  background: #005DA5;
+  background: #005da5;
   color: #fff;
 }
 .select-tariff .bottom-box {
@@ -348,7 +348,7 @@ body.no-scroll {
   display: none;
 }
 .select-tariff .checkbox-input:checked + .checkbox {
-  background: #005DA5;
+  background: #005da5;
 }
 .select-tariff .checkbox-input:checked + .checkbox::before {
   background: #fff;
@@ -368,7 +368,7 @@ body.no-scroll {
   width: 70px;
   height: 35px;
   border-radius: 50px;
-  border: 1px solid #005DA5;
+  border: 1px solid #005da5;
   padding: 7px;
   display: block;
   cursor: pointer;
@@ -384,7 +384,7 @@ body.no-scroll {
   width: 21px;
   height: 21px;
   border-radius: 50%;
-  background: #005DA6;
+  background: #005da6;
   transition: all 0.3s ease-in-out;
 }
 .select-tariff .right-box {
@@ -419,8 +419,8 @@ body.no-scroll {
 .select-tariff .right-box .tariff-boxx .tariff {
   width: 89px;
   height: 85px;
-  border: 2px dashed #005DA6;
-  background: #FFFFFF;
+  border: 2px dashed #005da6;
+  background: #ffffff;
   border-radius: 24px;
   display: flex;
   align-items: center;
@@ -457,7 +457,7 @@ body.no-scroll {
   font-weight: 300;
   line-height: 26px;
   display: block;
-  margin-top: -13px;
+  margin-top: -9px;
 }
 .select-tariff .questions {
   margin: 70px 0 96px 0;
@@ -471,7 +471,7 @@ body.no-scroll {
   font-size: 36px;
   font-weight: 500;
   line-height: 26px;
-  color: #005DA5;
+  color: #005da5;
   margin-bottom: 30px;
 }
 .select-tariff .questions-info {
@@ -486,7 +486,7 @@ body.no-scroll {
 .any-doubts .container {
   padding: 40px;
   border-radius: 24px;
-  background: #E2E8EF;
+  background: #e2e8ef;
   display: flex;
   align-items: start;
   gap: 60px;
@@ -530,7 +530,7 @@ body.no-scroll {
   width: 19px;
   height: 19px;
   border-radius: 50%;
-  border: 2px solid #005DA6;
+  border: 2px solid #005da6;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
@@ -541,7 +541,7 @@ body.no-scroll {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #005DA6;
+  background: #005da6;
   transform: translateY(-50%);
   top: 50%;
   left: 3px;
@@ -558,7 +558,7 @@ body.no-scroll {
   width: 397px;
   padding: 12px 18px;
   border-radius: 24px;
-  color: #005DA5;
+  color: #005da5;
   font-size: 20px;
   font-weight: 300;
   line-height: 26px;
@@ -566,10 +566,10 @@ body.no-scroll {
   background: #fff;
 }
 .any-doubts__input::-moz-placeholder {
-  color: #005DA5;
+  color: #005da5;
 }
 .any-doubts__input::placeholder {
-  color: #005DA5;
+  color: #005da5;
 }
 
 .all-tariffs {
@@ -584,7 +584,7 @@ body.no-scroll {
   gap: 24px;
 }
 .all-tariffs__card {
-  background: #E2E8EF;
+  background: #e2e8ef;
   padding: 20px 28px 17px 28px;
   border-radius: 24px;
   text-align: center;
@@ -597,7 +597,7 @@ body.no-scroll {
 .all-tariffs__card .bonus-box {
   border-radius: 24px;
   padding: 16px 20px;
-  border: 2px solid #005DA6;
+  border: 2px solid #005da6;
   text-align: left;
   background: #fff;
 }
@@ -619,7 +619,7 @@ body.no-scroll {
   line-height: 41.36px;
   margin: 23px 0;
   display: block;
-  color: #005DA5;
+  color: #005da5;
 }
 
 .questions-answers .title {
@@ -634,7 +634,7 @@ body.no-scroll {
 .questions-answers .accordion-header {
   padding: 10px 12px 10px 0;
   cursor: pointer;
-  border-bottom: 1px solid #EAECEE;
+  border-bottom: 1px solid #eaecee;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -669,7 +669,7 @@ body.no-scroll {
 
 .footer {
   padding: 80px 0;
-  background: #EAECEE;
+  background: #eaecee;
 }
 .footer .container {
   display: flex;
@@ -767,6 +767,11 @@ body.no-scroll {
     opacity: 1;
   }
 }
+.modal.info-modal .tariffs {
+  gap: 60px;
+  justify-content: start;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -802,7 +807,7 @@ body.no-scroll {
 .modal .scroll-box {
   position: relative;
   background: #fff;
-  border: 2px solid #E2E8EF;
+  border: 2px solid #e2e8ef;
   border-radius: 24px;
   max-width: 1240px;
   width: 100%;
@@ -819,7 +824,7 @@ body.no-scroll {
   width: 3px;
 }
 .modal-content::-webkit-scrollbar-thumb {
-  background: #005DA6;
+  background: #005da6;
 }
 .modal-title {
   font-size: 36px;
@@ -853,7 +858,7 @@ body.no-scroll {
   line-height: 26px;
 }
 .modal .bonus-box {
-  border: 2px solid #005DA6;
+  border: 2px solid #005da6;
   background: #fff;
   padding: 13px 20px;
   border-radius: 24px;
@@ -929,13 +934,14 @@ body.no-scroll {
   position: absolute;
   top: 10px;
   left: 0;
-  background: #005DA6;
+  background: #005da6;
   border-radius: 50%;
   width: 4px;
   height: 4px;
 }
-.modal .sidebars a {
-  color: #005DA5;
+.modal .sidebars a,
+.modal .sidebars strong {
+  color: #005da5;
   white-space: nowrap;
 }
 .modal .checkbox-content {
@@ -952,7 +958,7 @@ body.no-scroll {
   display: none;
 }
 .modal .checkbox-box .checkbox-input:checked + .checkbox {
-  background: #005DA5;
+  background: #005da5;
 }
 .modal .checkbox-box .checkbox-input:checked + .checkbox::before {
   background: #fff;
@@ -967,7 +973,7 @@ body.no-scroll {
   width: 70px;
   height: 35px;
   border-radius: 50px;
-  border: 1px solid #005DA5;
+  border: 1px solid #005da5;
   padding: 7px;
   display: block;
   cursor: pointer;
@@ -983,7 +989,7 @@ body.no-scroll {
   width: 21px;
   height: 21px;
   border-radius: 50%;
-  background: #005DA6;
+  background: #005da6;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1030,7 +1036,7 @@ body.no-scroll {
   gap: 22px;
 }
 .select-modal .form {
-  background: #E2E8EF;
+  background: #e2e8ef;
   border-radius: 24px;
   padding: 40px 30px;
 }
@@ -1050,17 +1056,17 @@ body.no-scroll {
   font-size: 20px;
   font-weight: 300;
   line-height: 26px;
-  color: #005DA6;
+  color: #005da6;
   width: 100%;
   border-radius: 24px;
   padding: 12px 18px;
   border: none;
 }
 .select-modal input::-moz-placeholder {
-  color: #005DA6;
+  color: #005da6;
 }
 .select-modal input::placeholder {
-  color: #005DA6;
+  color: #005da6;
 }
 .select-modal .inputs {
   display: flex;
@@ -1124,7 +1130,7 @@ body.no-scroll {
   left: 0;
   width: 19px;
   height: 19px;
-  border: 2px solid #005DA6;
+  border: 2px solid #005da6;
   border-radius: 50%;
 }
 .select-modal .checkboxes label::after {
@@ -1136,7 +1142,7 @@ body.no-scroll {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: #005DA6;
+  background: #005da6;
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
@@ -1228,7 +1234,7 @@ body.no-scroll {
 .hamburger-menu span {
   width: 20px;
   height: 2px;
-  background: #005DA5;
+  background: #005da5;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -1578,7 +1584,7 @@ body.no-scroll {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px dashed #005DA5;
+  border: 1px dashed #005da5;
   background: #fff;
   text-align: center;
 }
