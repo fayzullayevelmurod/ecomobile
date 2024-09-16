@@ -61,7 +61,6 @@ IMask(document.getElementById('phone-mask'), {
 
 try {
   const accordions = document.querySelectorAll('.accordion');
-  console.log(accordions);
   accordions.forEach((accordion) => {
     const accordionHeader = accordion.querySelector('.accordion-header');
     const accordionBody = accordion.querySelector('.accordion-body');
@@ -101,7 +100,6 @@ try {
     );
     const yourNumberText = document.querySelector('.your-number__text');
     const deliverySimCard = document.querySelector('.delivery-sim__card');
-    console.log(deliverySimCard);
 
     yourNumber.forEach(function (checkbox) {
       checkbox.addEventListener('change', function () {
@@ -128,7 +126,7 @@ try {
             box.checked = true;
           });
         } else {
-          deliverySimCard.textContent = 'физическая, получу доставкойt';
+          deliverySimCard.textContent = 'физическая, получу доставкой';
           eSimNumber.forEach(function (box) {
             box.checked = false;
           });
@@ -145,7 +143,7 @@ try {
             box.checked = true;
           });
         } else {
-          deliverySimCard.textContent = 'физическая, получу доставкойt';
+          deliverySimCard.textContent = 'физическая, получу доставкой';
           eSimNumberAdditional.forEach(function (box) {
             box.checked = false;
           });
@@ -765,7 +763,6 @@ try {
         const modalTariffPrice = modal.querySelector('.modal-tariff-price');
 
         const tariffInfoTitle = infoModal.querySelector('.tariff-info__title');
-        console.log(tariffInfoTitle);
 
         const tariffDesc = infoModal.querySelector('.tariff-desc');
 
