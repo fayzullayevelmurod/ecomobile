@@ -204,27 +204,31 @@
               <div class="select-tariff__content">
                 <div class="left-box">
                   <div class="left-box__top">
-                    <h4 class="select-tariff__content-title">основной номер</h4>
-                    <div class="checkbox-box">
-                      <input
-                        class="checkbox-input your-number"
-                        type="checkbox"
-                        checked
-                        id="checkbox-1"
-                      />
-                      <label class="checkbox" for="checkbox-1"></label>
-                      <span class="checkbox-label"
-                        >Перейти со своим номером</span
-                      >
-                    </div>
-                    <div class="checkbox-box">
-                      <input
-                        class="checkbox-input e-sim__number"
-                        type="checkbox"
-                        id="checkbox-s"
-                      />
-                      <label class="checkbox" for="checkbox-s"></label>
-                      <span class="checkbox-label">eSim</span>
+                    <div class="left-box__top child">
+                      <h4 class="select-tariff__content-title">
+                        основной номер
+                      </h4>
+                      <div class="checkbox-box">
+                        <input
+                          class="checkbox-input your-number"
+                          type="checkbox"
+                          checked
+                          id="checkbox-1"
+                        />
+                        <label class="checkbox" for="checkbox-1"></label>
+                        <span class="checkbox-label"
+                          >Перейти со своим номером</span
+                        >
+                      </div>
+                      <div class="checkbox-box">
+                        <input
+                          class="checkbox-input e-sim__number"
+                          type="checkbox"
+                          id="checkbox-s"
+                        />
+                        <label class="checkbox" for="checkbox-s"></label>
+                        <span class="checkbox-label">eSim</span>
+                      </div>
                     </div>
                     <div class="bottom-box">
                       <img src="images/icons/sim-card.svg" alt="sim card" />
@@ -300,18 +304,20 @@
               <div class="select-tariff__content">
                 <div class="left-box">
                   <div class="left-box__top">
-                    <h4 class="select-tariff__content-title">
-                      дополнительный номер
-                    </h4>
-                    <div class="checkbox-box">
-                      <input
-                        class="checkbox-input e-sim__number-additional"
-                        type="checkbox"
-                        name=""
-                        id="checkbox-2"
-                      />
-                      <label class="checkbox" for="checkbox-2"></label>
-                      <span class="checkbox-label">eSim</span>
+                    <div class="left-box__top child">
+                      <h4 class="select-tariff__content-title">
+                        дополнительный номер
+                      </h4>
+                      <div class="checkbox-box">
+                        <input
+                          class="checkbox-input e-sim__number-additional"
+                          type="checkbox"
+                          name=""
+                          id="checkbox-2"
+                        />
+                        <label class="checkbox" for="checkbox-2"></label>
+                        <span class="checkbox-label">eSim</span>
+                      </div>
                     </div>
                     <div class="bottom-box">
                       <img src="images/icons/sim-card-2.svg" alt="sim card" />
@@ -584,13 +590,15 @@
                   >
                 </div>
               </div>
-              <span class="tariff-price modal-tariff-price">700 р/мес</span>
-              <button
-                class="btn-primary select-modal__open"
-                data-modal="select-modal"
-              >
-                ВЫБРАТЬ
-              </button>
+              <div>
+                <span class="tariff-price modal-tariff-price">700 р/мес</span>
+                <button
+                  class="btn-primary select-modal__open"
+                  data-modal="select-modal"
+                >
+                  ВЫБРАТЬ
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -636,7 +644,9 @@
                 </div>
                 <div>
                   <h5>Дополнительная СИМ-карта:</h5>
-                  <span>физическая, получу доставкой</span>
+                  <span class="delivery-sim__card"
+                    >физическая, получу доставкой</span
+                  >
                 </div>
               </div>
             </div>

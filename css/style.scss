@@ -265,6 +265,12 @@ body {
       display: none;
       animation: fade 0.3s ease-in-out;
 
+      &-info {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 26px;
+      }
       &.show {
         display: block;
       }
@@ -427,7 +433,8 @@ body {
   }
 
   .checkbox {
-    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
     height: 35px;
     border-radius: 50px;
     border: 1px solid #005da5;
@@ -737,6 +744,7 @@ body {
     flex-direction: column;
     gap: 16px;
     margin-bottom: 70px;
+    padding: 0 105px;
   }
 
   .accordion {
@@ -1420,6 +1428,9 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .select-tariff__container {
+    padding: 50px 106px;
+  }
 }
 
 @media screen and (max-width: 1120px) {
@@ -1483,12 +1494,45 @@ body {
       width: 100%;
     }
   }
+  .modal .sidebars .right-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .modal .sidebars .tariff-price {
+    margin-top: 0 !important;
+  }
 }
 
 @media screen and (max-width: 992px) {
+  .select-tariff__container {
+    padding: 50px 25px;
+  }
+  .select-tariff__content .left-box {
+    width: 100%;
+  }
+  .select-tariff .bottom-box {
+    flex-wrap: nowrap;
+  }
+  .select-tariff .right-box .functions-info {
+    text-align: center;
+  }
+  .select-tariff .left-box__top {
+    width: 100%;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .left-box__top.child {
+    flex-direction: column;
+  }
   .modal .scroll-box {
     padding: 20px 5px 20px 20px;
     border-radius: 20px;
+  }
+  .questions-answers .accordions {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .modal-title {
@@ -1592,6 +1636,12 @@ body {
 @media screen and (max-width: 768px) {
   .intro-slider .swiper-slide {
     flex-direction: column;
+  }
+  .select-tariff .left-box__top {
+    flex-direction: column;
+  }
+  .select-tariff .bottom-box {
+    flex-wrap: wrap;
   }
 
   .select-modal .modal-bottom .btn-primary {

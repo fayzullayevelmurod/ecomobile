@@ -100,6 +100,8 @@ try {
       '.e-sim__number-additional'
     );
     const yourNumberText = document.querySelector('.your-number__text');
+    const deliverySimCard = document.querySelector('.delivery-sim__card');
+    console.log(deliverySimCard);
 
     yourNumber.forEach(function (checkbox) {
       checkbox.addEventListener('change', function () {
@@ -121,10 +123,12 @@ try {
       checkbox.checked = false;
       checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
+          deliverySimCard.textContent = 'e-SIM';
           eSimNumber.forEach(function (box) {
             box.checked = true;
           });
         } else {
+          deliverySimCard.textContent = 'физическая, получу доставкойt';
           eSimNumber.forEach(function (box) {
             box.checked = false;
           });
@@ -136,10 +140,12 @@ try {
       checkbox.checked = false;
       checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
+          deliverySimCard.textContent = 'e-SIM';
           eSimNumberAdditional.forEach(function (box) {
             box.checked = true;
           });
         } else {
+          deliverySimCard.textContent = 'физическая, получу доставкойt';
           eSimNumberAdditional.forEach(function (box) {
             box.checked = false;
           });
@@ -168,13 +174,13 @@ try {
     // Info matnlarini belgilash
     const infoTexts = {
       megafon: [
-        'Все нужные функции',
-        'Все нужные функции',
+        'Безупречный выбор',
+        'Максимум возможностей',
         'Лучший выбор',
         'На полную катушку',
       ],
       mtc: [
-        'Безупречный выбор',
+        'Все нужные функции',
         'Максимум возможностей',
         'Максимум комфорта',
         'Безграничные возможности',
@@ -459,7 +465,7 @@ try {
         bonus: 25,
         price: '650 р/мес',
         bottomPrice:
-          'Абонентская плата по тарифу Всегда.Связь Мтс-1 составляет 650 рублей в месяц',
+          'Абонентская плата по тарифу Всегда.Связь MTS-1 составляет 650 рублей в месяц',
         tariffInfoTitle:
           'Откройте новый уровень связи с нашим уникальным продуктом!',
         tariffDesc:
@@ -531,7 +537,7 @@ try {
         bonus: 30,
         price: '800 р/мес',
         bottomPrice:
-          'Абонентская плата по тарифу Всегда.Связь Мтс-2 составляет 800 рублей в месяц',
+          'Абонентская плата по тарифу Всегда.Связь MTS-2 составляет 800 рублей в месяц',
         tariffInfoTitle:
           'Откройте новые горизонты связи и интернета с нашим инновационным тарифом!',
         tariffDesc:
@@ -599,7 +605,7 @@ try {
         bonus: 40,
         price: '1000 р/мес',
         bottomPrice:
-          'Абонентская плата по тарифу Всегда.Связь Мегафон-3 составляет 1000 рублей в месяц',
+          'Абонентская плата по тарифу Всегда.Связь МТС-3 составляет 1000 рублей в месяц',
         tariffInfoTitle:
           'Увеличьте возможности связи и интернета с нашим новым тарифом!',
         tariffDesc:
@@ -667,7 +673,7 @@ try {
         bonus: 40,
         price: '1150 р/мес',
         bottomPrice:
-          'Абонентская плата по тарифу Всегда.Связь Мегафон-4 составляет 1150 рублей в месяц',
+          'Абонентская плата по тарифу Всегда.Связь МТС-4 составляет 1150 рублей в месяц',
         tariffInfoTitle:
           'Расширьте возможности связи и интернета с нашим новым агрегированным тарифом!',
         tariffDesc:
