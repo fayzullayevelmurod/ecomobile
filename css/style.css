@@ -525,11 +525,15 @@ body.no-scroll {
 .any-doubts__content .checkbox {
   display: none;
 }
+.any-doubts__content .checkbox:checked + .checkbox-label::after {
+  opacity: 1;
+}
 .any-doubts__content .checkbox-label {
   position: relative;
   display: flex;
   align-items: center;
   padding-left: 29px;
+  cursor: pointer;
 }
 .any-doubts__content .checkbox-label::before {
   content: "";
@@ -552,6 +556,7 @@ body.no-scroll {
   transform: translateY(-50%);
   top: 50%;
   left: 3px;
+  opacity: 0;
 }
 .any-doubts__content .checkbox-label span {
   font-size: 20px;
@@ -982,7 +987,8 @@ body.no-scroll {
   line-height: 26px;
 }
 .modal .checkbox-box .checkbox {
-  width: 70px;
+  min-width: 70px;
+  max-width: 70px;
   height: 35px;
   border-radius: 50px;
   border: 1px solid #005da5;
@@ -1395,6 +1401,9 @@ body.no-scroll {
   .intro-slider .swiper-slide {
     flex-direction: column;
   }
+  .modal .sidebars .right-box {
+    flex-wrap: wrap;
+  }
   .select-tariff .left-box__top {
     flex-direction: column;
   }
@@ -1612,6 +1621,26 @@ body.no-scroll {
     left: 25px;
     bottom: 25px;
   }
+  .all-tariffs__card {
+    display: flex;
+    flex-direction: column;
+  }
+  .all-tariffs__card-price {
+    order: 1;
+    margin: 20px 0 0 0;
+  }
+  .all-tariffs__card .bonus-box {
+    margin-bottom: 20px;
+  }
+  .modal .sidebars .right-box > div:not(.checkbox-content) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .modal .sidebars .tariff-price {
+    order: 1;
+    margin: 0;
+  }
 }
 @media screen and (max-width: 500px) {
   .swiper-horizontal > .swiper-pagination-bullets,
@@ -1622,6 +1651,22 @@ body.no-scroll {
   }
   .footer .right-box {
     flex-direction: column;
+  }
+  .all-tariffs__cards {
+    grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  }
+  .all-tariffs__card {
+    padding: 20px;
+  }
+  .modal.info-modal .tariffs {
+    gap: 30px;
+  }
+  .modal .sidebars li {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .all-tariffs__card .bonus-box__info {
+    line-height: 22px;
   }
 }
 .tariff-boxes {
@@ -1658,4 +1703,14 @@ body.no-scroll {
 
 .your-number__text {
   display: inline-block;
+}
+
+@media screen and (max-width: 330px) {
+  .select-tariff .bottom-box .btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .select-tariff .bottom-box .btns button {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
