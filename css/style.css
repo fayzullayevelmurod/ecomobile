@@ -1314,7 +1314,7 @@ body.no-scroll {
     flex-direction: column;
   }
   .modal .scroll-box {
-    padding: 20px 5px 20px 20px;
+    padding: 20px 23px 20px 20px;
     border-radius: 20px;
   }
   .questions-answers .accordions {
@@ -1547,6 +1547,7 @@ body.no-scroll {
     top: 15px;
     right: 12px;
     width: 25px;
+    background: #fff;
     height: 25px;
   }
   .modal .tariffs {
@@ -1638,7 +1639,6 @@ body.no-scroll {
     gap: 20px;
   }
   .modal .sidebars .tariff-price {
-    order: 1;
     margin: 0;
   }
 }
@@ -1648,6 +1648,17 @@ body.no-scroll {
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
     bottom: 0;
+  }
+  .modal .sidebars .tariff-price {
+    order: 1;
+  }
+  .modal .sidebars .right-box {
+    flex-direction: column;
+    align-items: start;
+  }
+  .modal .sidebars .right-box > div:not(.checkbox-content) {
+    justify-content: center;
+    width: 100%;
   }
   .footer .right-box {
     flex-direction: column;
@@ -1712,5 +1723,17 @@ body.no-scroll {
   }
   .select-tariff .bottom-box .btns button {
     width: 100%;
+  }
+  .select-modal .form {
+    border-radius: 14px;
+    padding: 20px 10px;
+  }
+  .select-modal .checkboxes label span {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .btn-primary,
+  .btn-outline-primary {
+    padding: 12px 10px;
   }
 }/*# sourceMappingURL=style.css.map */
